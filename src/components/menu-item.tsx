@@ -6,13 +6,28 @@ export interface Menu {
   icon: (props: { className: string }) => JSX.Element;
   title: string;
   href: string;
-  isOpen?: boolean;
+  isSidebarOpen?: boolean;
   submenu?: boolean;
-  submenuItem?: any;
+  submenuOpen?: boolean;
+  submenuItem?: [
+    {
+      title: string;
+      href: string;
+    }
+  ];
 }
 
 function MenuItem(props: Menu) {
   const router = useRouter();
+
+  let submenuItem: [];
+  if (props.submenu) {
+    props.submenuItem?.map((menuitem, index) => {
+      <li>
+        <Link href={menuitem.href}>{menuitem.title}</Link>
+      </li>;
+    });
+  }
 
   return (
     <li>
@@ -25,8 +40,8 @@ function MenuItem(props: Menu) {
         {router.route == props.href && (
           <span className="absolute left-0 top-1/2 h-9 w-[6px] -translate-y-1/2 rounded bg-white"></span>
         )}
-        <props.icon className={`${props.isOpen ? "mr-3" : "flex-1"}`} />
-        {props.isOpen ? props.title : ""}
+        <props.icon className={`${props.isSidebarOpen ? "mr-3" : "flex-1"}`} />
+        {props.isSidebarOpen ? props.title : ""}
       </Link>
     </li>
   );
