@@ -1,11 +1,12 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import LogoutIcon from "./logout-icon";
 import MenuItem, { Menu } from "./menu-item";
 import BellMenuIcon from "./svgs/bell-menu-icon";
 import BookingMenuIcon from "./svgs/booking-menu-icon";
 import CarMenuIcon from "./svgs/car-menu-icon";
 import DashboardMenuIcon from "./svgs/dashboard-menu-icon";
+import Hamburger from "./svgs/hamburger";
 import Logo from "./svgs/logo";
 import PaymentMenuIcon from "./svgs/payment-menu-icon";
 import ReportMenuIcon from "./svgs/report-menu-icon";
@@ -25,6 +26,17 @@ const reportMenus = [
     icon: PaymentMenuIcon,
     title: "Payment Details",
     href: "/payment-details",
+    submenu: true,
+    submenuItems: [
+      {
+        title: "Payment Cards",
+        href: "/payment-cards",
+      },
+      {
+        title: "Payment VA",
+        href: "/payment-va",
+      },
+    ],
   },
   {
     icon: TransactionMenuIcon,
@@ -39,41 +51,38 @@ const reportMenus = [
 ] as Menu[];
 
 function MainMenu() {
+  const [open, setOpen] = useState(true);
+
   return (
-    <div className="flex w-60 flex-none flex-col justify-between bg-black p-6 text-white">
-      <div className="flex flex-col space-y-5">
+    <div
+      className={`relative flex ${
+        open ? "w-72" : "w-28"
+      } flex-none flex-col justify-between bg-black p-6 text-white duration-300`}
+    >
+      <div className="relative flex flex-col justify-between space-y-5">
         {/* Logo */}
-        <div>
+        <div className={`inline-flex ${open ? "justify-between" : ""}`}>
           <Link href="/" className="block px-2 py-6">
-            <Logo />
+            {open ? <Logo /> : ""}
           </Link>
+          <Hamburger className="right-0 py-7" onClick={() => setOpen(!open)} />
         </div>
 
         <div className="flex flex-col space-y-4">
           <ul className="flex flex-col space-y-2">
             {menus.map((menu, index) => (
-              <MenuItem
-                key={index}
-                title={menu.title}
-                href={menu.href}
-                icon={menu.icon}
-              />
+              <MenuItem key={index} title={menu.title} href={menu.href} icon={menu.icon} isOpen={open} />
             ))}
           </ul>
 
           <hr className="ml-4 py-2 text-white/20" />
 
           <div>
-            <p className="px-4 py-3 text-white/50">Report</p>
+            <p className="px-4 py-3 text-white/50">{open ? "Report" : ""}</p>
 
             <ul>
               {reportMenus.map((menu, index) => (
-                <MenuItem
-                  key={index}
-                  title={menu.title}
-                  href={menu.href}
-                  icon={menu.icon}
-                />
+                <MenuItem key={index} title={menu.title} href={menu.href} icon={menu.icon} isOpen={open} />
               ))}
             </ul>
           </div>
@@ -82,7 +91,7 @@ function MainMenu() {
 
       <div>
         <button className="h3 flex w-full items-center justify-center rounded-lg bg-white/20 py-3 px-4">
-          <LogoutIcon className="mr-3" /> Logout
+          <LogoutIcon className="mr-3" /> {open ? "Logout" : ""}
         </button>
       </div>
     </div>
