@@ -1,96 +1,129 @@
+import React from "react";
+import Link from "next/link";
+
+// layout for page
+
+import Auth from "../../layouts/Auth";
+import Image from "next/image";
+
 export default function Login() {
   return (
-    <div className="h-screen bg-gray-800 pt-20">
-      <div className="mx-auto p-8 lg:w-1/2 xl:w-1/3">
-        <div className="rounded-t-lg bg-white p-8">
-          <p className="text-center text-sm font-light text-gray-400">Sign in with</p>
-          <div>
-            <div className="mt-3 flex items-center justify-center space-x-4">
-              <button className="flex transform items-center rounded border border-transparent bg-white py-2 px-4 text-sm font-medium uppercase text-indigo-500 shadow-md transition hover:-translate-y-0.5 hover:border-transparent hover:bg-gray-100 hover:text-gray-700 hover:shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="mr-3 h-6 w-6">
-                  <path
-                    fill-rule="evenodd"
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                  ></path>
-                </svg>
-                Github
-              </button>
-              <button className="flex transform items-center rounded border border-transparent bg-white py-2 px-4 text-sm font-medium uppercase text-indigo-500 shadow-md transition hover:-translate-y-0.5 hover:border-transparent hover:bg-gray-100 hover:text-gray-700 hover:shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" className="mr-3 h-6 w-6" viewBox="0 0 48 48">
-                  <path
-                    fill="#fbc02d"
-                    d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"
-                  />
-                  <path
-                    fill="#e53935"
-                    d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"
-                  />
-                  <path
-                    fill="#4caf50"
-                    d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"
-                  />
-                  <path
-                    fill="#1565c0"
-                    d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"
-                  />
-                </svg>
-                Google
-              </button>
+    <Auth>
+      <div className="container mx-auto h-full px-4">
+        <div className="flex h-full content-center items-center justify-center">
+          <div className="w-full px-4 lg:w-4/12">
+            <div className="bg-blueGray-200 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 shadow-lg">
+              <div className="mb-0 rounded-t px-6 py-6">
+                <div className="mb-3 text-center">
+                  <h6 className="text-blueGray-500 text-sm font-bold">
+                    Sign in with
+                  </h6>
+                </div>
+                <div className="btn-wrapper text-center">
+                  <button
+                    className="active:bg-blueGray-50 text-blueGray-700 mr-2 mb-1 inline-flex items-center rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
+                    type="button"
+                  >
+                    <Image
+                      alt="..."
+                      className="mr-1 w-5"
+                      src="/img/github.svg"
+                      width={20}
+                      height={20}
+                    />
+                    Github
+                  </button>
+                  <button
+                    className="active:bg-blueGray-50 text-blueGray-700 mr-1 mb-1 inline-flex items-center rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
+                    type="button"
+                  >
+                    <Image
+                      alt="..."
+                      className="mr-1 w-5"
+                      src="/img/google.svg"
+                      width={20}
+                      height={20}
+                    />
+                    Google
+                  </button>
+                </div>
+                <hr className="border-b-1 border-blueGray-300 mt-6" />
+              </div>
+              <div className="flex-auto px-4 py-10 pt-0 lg:px-10">
+                <div className="text-blueGray-400 mb-3 text-center font-bold">
+                  <small>Or sign in with credentials</small>
+                </div>
+                <form>
+                  <div className="relative mb-3 w-full">
+                    <label
+                      className="text-blueGray-600 mb-2 block text-xs font-bold uppercase"
+                      htmlFor="grid-password"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      className="placeholder-blueGray-300 text-blueGray-600 w-full rounded border-0 bg-white px-3 py-3 text-sm shadow transition-all duration-150 ease-linear focus:outline-none focus:ring"
+                      placeholder="Email"
+                    />
+                  </div>
+
+                  <div className="relative mb-3 w-full">
+                    <label
+                      className="text-blueGray-600 mb-2 block text-xs font-bold uppercase"
+                      htmlFor="grid-password"
+                    >
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      className="placeholder-blueGray-300 text-blueGray-600 w-full rounded border-0 bg-white px-3 py-3 text-sm shadow transition-all duration-150 ease-linear focus:outline-none focus:ring"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div>
+                    <label className="inline-flex cursor-pointer items-center">
+                      <input
+                        id="customCheckLogin"
+                        type="checkbox"
+                        className="form-checkbox text-blueGray-700 ml-1 h-5 w-5 rounded border-0 transition-all duration-150 ease-linear"
+                      />
+                      <span className="text-blueGray-600 ml-2 text-sm font-semibold">
+                        Remember me
+                      </span>
+                    </label>
+                  </div>
+
+                  <div className="mt-6 text-center">
+                    <button
+                      className="bg-blueGray-800 active:bg-blueGray-600 mr-1 mb-1 w-full rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+                      type="button"
+                    >
+                      Sign In
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="relative mt-6 flex flex-wrap">
+              <div className="w-1/2">
+                <a
+                  href="#pablo"
+                  onClick={(e) => e.preventDefault()}
+                  className="text-blueGray-200"
+                >
+                  <small>Forgot password?</small>
+                </a>
+              </div>
+              <div className="w-1/2 text-right">
+                <Link href="/auth/register" className="text-blueGray-200">
+                  <small>Create new account</small>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        <div className="rounded-b-lg bg-gray-100 py-12 px-4 lg:px-24">
-          <p className="text-center text-sm font-light text-gray-500"> Or sign in with credentials </p>
-          <form className="mt-6">
-            <div className="relative">
-              <input
-                className="focus:shadow-outline w-full appearance-none rounded-md border border-gray-100 py-3  pl-12  leading-tight text-gray-600 shadow-sm transition focus:placeholder-gray-600 focus:shadow-md focus:outline-none focus:ring-gray-600"
-                id="username"
-                type="text"
-                placeholder="Email"
-              />
-              <div className="absolute inset-y-0 left-0 flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-3 h-7 w-7 p-1 text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-              </div>
-            </div>
-            <div className="relative mt-3">
-              <input
-                className="focus:shadow-outline w-full appearance-none rounded-md border border-gray-100 py-3  pl-12  leading-tight text-gray-600 shadow-sm transition focus:placeholder-gray-600 focus:shadow-md focus:outline-none focus:ring-gray-600"
-                id="username"
-                type="text"
-                placeholder="Password"
-              />
-              <div className="absolute inset-y-0 left-0 flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-3 h-7 w-7 p-1 text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
-                </svg>
-              </div>
-            </div>
-            <div className="mt-4 flex items-center text-gray-500">
-              <input type="checkbox" id="remember" name="remember" className="mr-3" />
-              <label>Remember me</label>
-            </div>
-            <div className="mt-8 flex items-center justify-center">
-              <button className="transform rounded bg-indigo-500 py-2 px-4 font-medium uppercase text-white shadow transition hover:-translate-y-0.5 hover:bg-indigo-600 hover:shadow-lg">
-                Sign in
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
-    </div>
+    </Auth>
   );
 }

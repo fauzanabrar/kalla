@@ -18,7 +18,8 @@ const menus = [
   { icon: CarMenuIcon, title: "Drivers", href: "/drivers" },
   { icon: BookingMenuIcon, title: "Bookings", href: "/bookings" },
   { icon: BellMenuIcon, title: "Notifications", href: "/notifications" },
-  { icon: SettingMenuIcon, title: "Settings", href: "/settings" },
+  { icon: SettingMenuIcon, title: "Settings", href: "/admin/settings" },
+  { icon: SettingMenuIcon, title: "Tables", href: "/admin/tables" },
   { icon: SettingMenuIcon, title: "Login", href: "/auth/login" },
   { icon: SettingMenuIcon, title: "Register", href: "/auth/register" },
   { icon: SettingMenuIcon, title: "Forgot Pass", href: "/auth/forgot" },
@@ -69,7 +70,10 @@ function MainMenu() {
           <Link href="/" className="block px-2 py-6">
             {sidebarOpen ? <Logo /> : ""}
           </Link>
-          <Hamburger className="right-0 py-7" onClick={() => setSidebarOpen(!sidebarOpen)} />
+          <Hamburger
+            className="right-0 py-7"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          />
         </div>
 
         <div className="flex flex-col space-y-4">
@@ -91,7 +95,9 @@ function MainMenu() {
           <hr className="ml-4 py-2 text-white/20" />
 
           <div>
-            <p className="px-4 py-3 text-white/50">{sidebarOpen ? "Report" : ""}</p>
+            <p className="px-4 py-3 text-white/50">
+              {sidebarOpen ? "Report" : ""}
+            </p>
 
             <ul>
               {reportMenus.map((menu, index) => (
