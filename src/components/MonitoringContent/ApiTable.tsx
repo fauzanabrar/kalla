@@ -441,7 +441,7 @@ export default function ApiTable(props: CardTableProps) {
                             <p className="text-sm text-gray-500">
                               All of your data will be showed bellow.
                             </p>
-                            <div className="text-blueGray-500 my-4 text-sm leading-relaxed">
+                            <div className="text-blueGray-500 my-4 overflow-x-auto text-sm leading-relaxed">
                               <div className="">
                                 <ul className="">
                                   <li className="">
@@ -483,7 +483,7 @@ export default function ApiTable(props: CardTableProps) {
                             <div className="grid grid-flow-col-dense grid-cols-2">
                               <div className="mr-2">
                                 <strong>Request</strong>
-                                <div className="flex-nowrap overscroll-auto rounded bg-black text-white">
+                                <div className="flex-nowrap overflow-x-auto overscroll-auto rounded bg-black text-sm text-white">
                                   {/* {monitoring.requestData} */}
                                   <JsonPretty
                                     jsonStr={monitoring.requestData}
@@ -492,7 +492,7 @@ export default function ApiTable(props: CardTableProps) {
                               </div>
                               <div className="ml-2">
                                 <strong>Response</strong>
-                                <div className="flex-nowrap overscroll-auto rounded bg-black text-white">
+                                <div className="flex-nowrap overflow-x-auto overscroll-auto rounded bg-black text-sm text-white">
                                   <JsonPretty
                                     jsonStr={monitoring.responseData}
                                   />

@@ -14,29 +14,62 @@ import "../styles/custom.css";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+let root: any = null;
+let container: any = null;
+
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
   document.body.classList.add("body-page-transition");
-  const root = createRoot(
-    document.getElementById("page-transition") as HTMLElement
-  );
-  root.render(<PageChange path={url} />);
+
+  if (!root && !container) {
+    container = document.getElementById("page-transition") as HTMLElement;
+    root = createRoot(container);
+    root.render(<PageChange path={url} />);
+    // console.log("routeChangeStart1");
+  } else {
+    root = createRoot(container);
+    root.render(<PageChange path={url} />);
+    // console.log("routeChangeStart2");
+  }
 });
+
 Router.events.on("routeChangeComplete", () => {
-  const root = createRoot(
-    document.getElementById("page-transition") as HTMLElement
-  );
-  root.unmount();
-  document.body.classList.remove("body-page-transition");
-});
-Router.events.on("routeChangeError", () => {
-  const root = createRoot(
-    document.getElementById("page-transition") as HTMLElement
-  );
-  root.unmount();
+  if (!root) {
+    container = document.getElementById("page-transition") as HTMLElement;
+    root = createRoot(container);
+    root.unmount();
+    // console.log("routeChangeComplete1");
+  } else {
+    root.unmount();
+    // console.log("routeChangeComplete2");
+  }
   document.body.classList.remove("body-page-transition");
 });
 
+Router.events.on("routeChangeError", () => {
+  if (!root) {
+    container = document.getElementById("page-transition") as HTMLElement;
+    root = createRoot(container);
+    root.unmount();
+    // console.log("routeChangeError1");
+  } else {
+    root.unmount();
+    // console.log("routeChangeError2");
+  }
+});
+
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <React.Fragment>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Custom NextJS</title>
+        {/* <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> */}
+      </Head>
+      <Component {...pageProps} />
+    </React.Fragment>
+  );
 }

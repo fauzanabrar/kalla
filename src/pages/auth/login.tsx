@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // layout for page
 
 import Auth from "../../layouts/Auth";
-import Image from "next/image";
 
 export default function Login() {
   return (
@@ -107,13 +107,9 @@ export default function Login() {
             </div>
             <div className="relative mt-6 flex flex-wrap">
               <div className="w-1/2">
-                <a
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  className="text-blueGray-200"
-                >
+                <Link href="/auth/forgot" className="text-blueGray-200">
                   <small>Forgot password?</small>
-                </a>
+                </Link>
               </div>
               <div className="w-1/2 text-right">
                 <Link href="/auth/register" className="text-blueGray-200">

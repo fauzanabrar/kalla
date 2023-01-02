@@ -19,7 +19,7 @@ export default function Sidebar(props: SidebarProps) {
   return (
     <>
       <nav
-        className={`relative z-10 flex flex-wrap items-center justify-between bg-white py-4 px-6 shadow-xl md:fixed md:left-0 md:top-0 md:bottom-0 md:block md:flex-row md:flex-nowrap md:overflow-hidden md:overflow-y-auto ${
+        className={`relative z-10 flex flex-wrap items-center justify-between bg-white py-4 pl-6 pr-3 shadow-xl md:fixed md:left-0 md:top-0 md:bottom-0 md:block md:flex-row md:flex-nowrap md:overflow-hidden md:overflow-y-auto ${
           sidebarOpen ? "md:w-64" : "md:w-28"
         }`}
       >
@@ -156,10 +156,10 @@ export default function Sidebar(props: SidebarProps) {
 
               <li className="items-center">
                 <Link
-                  href="/admin/simulator"
+                  href="/simulator"
                   className={
                     "block py-3 text-xs font-bold uppercase " +
-                    (router.pathname.indexOf("/admin/simulator") !== -1
+                    (router.pathname.indexOf("/simulator") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
@@ -167,7 +167,7 @@ export default function Sidebar(props: SidebarProps) {
                   <i
                     className={
                       "fas fa-shopping-bag mr-2 text-sm " +
-                      (router.pathname.indexOf("/admin/simulator") !== -1
+                      (router.pathname.indexOf("/simulator") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300") +
                       (sidebarOpen ? "" : " ml-3 flex-1")
@@ -274,7 +274,7 @@ export default function Sidebar(props: SidebarProps) {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="text-blueGray-500 block pt-1 pb-4 text-xs font-bold uppercase no-underline md:min-w-full">
-              Auth Layout Pages
+              {sidebarOpen ? "Auth Layout Pages" : ""}
             </h6>
             {/* Navigation */}
 
@@ -284,8 +284,13 @@ export default function Sidebar(props: SidebarProps) {
                   href="/auth/login"
                   className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
                 >
-                  <i className="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>{" "}
-                  Login
+                  <i
+                    className={
+                      `fas fa-fingerprint text-blueGray-400 mr-2 text-sm` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Login" : ""}
                 </Link>
               </li>
 
@@ -294,8 +299,13 @@ export default function Sidebar(props: SidebarProps) {
                   href="/auth/register"
                   className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
                 >
-                  <i className="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>{" "}
-                  Register
+                  <i
+                    className={
+                      `fas fa-clipboard-list text-blueGray-300 mr-2 text-sm` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Register" : ""}
                 </Link>
               </li>
             </ul>
@@ -304,7 +314,7 @@ export default function Sidebar(props: SidebarProps) {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="text-blueGray-500 block pt-1 pb-4 text-xs font-bold uppercase no-underline md:min-w-full">
-              No Layout Pages
+              {sidebarOpen ? "No Layout Pages" : ""}
             </h6>
             {/* Navigation */}
 
@@ -314,8 +324,13 @@ export default function Sidebar(props: SidebarProps) {
                   href="/landing"
                   className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
                 >
-                  <i className="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>{" "}
-                  Landing Page
+                  <i
+                    className={
+                      `fas fa-newspaper text-blueGray-400 mr-2 text-sm` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Landing Page" : ""}
                 </Link>
               </li>
 
@@ -324,8 +339,13 @@ export default function Sidebar(props: SidebarProps) {
                   href="/profile"
                   className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
                 >
-                  <i className="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>{" "}
-                  Profile Page
+                  <i
+                    className={
+                      `fas fa-user-circle text-blueGray-400 mr-2 text-sm` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Profile Page" : ""}
                 </Link>
               </li>
             </ul>
@@ -334,7 +354,7 @@ export default function Sidebar(props: SidebarProps) {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="text-blueGray-500 block pt-1 pb-4 text-xs font-bold uppercase no-underline md:min-w-full">
-              Documentation
+              {sidebarOpen ? "Documentation" : ""}
             </h6>
             {/* Navigation */}
             <ul className="flex list-none flex-col md:mb-4 md:min-w-full md:flex-col">
@@ -345,8 +365,13 @@ export default function Sidebar(props: SidebarProps) {
                   rel="noreferrer"
                   className="text-blueGray-700 hover:text-blueGray-500 mb-4 block text-sm font-semibold no-underline"
                 >
-                  <i className="fas fa-paint-brush text-blueGray-300 mr-2 text-base"></i>
-                  Styles
+                  <i
+                    className={
+                      `fas fa-paint-brush text-blueGray-300 mr-2 text-base` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>
+                  {sidebarOpen ? "Styles" : ""}
                 </Link>
               </li>
 
@@ -357,8 +382,13 @@ export default function Sidebar(props: SidebarProps) {
                   rel="noreferrer"
                   className="text-blueGray-700 hover:text-blueGray-500 mb-4 block text-sm font-semibold no-underline"
                 >
-                  <i className="fab fa-css3-alt text-blueGray-300 mr-2 text-base"></i>
-                  CSS Components
+                  <i
+                    className={
+                      `fab fa-css3-alt text-blueGray-300 mr-2 text-base` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>
+                  {sidebarOpen ? "CSS Components" : ""}
                 </Link>
               </li>
 
@@ -369,8 +399,13 @@ export default function Sidebar(props: SidebarProps) {
                   rel="noreferrer"
                   className="text-blueGray-700 hover:text-blueGray-500 mb-4 block text-sm font-semibold no-underline"
                 >
-                  <i className="fab fa-react text-blueGray-300 mr-2 text-base"></i>
-                  NextJS
+                  <i
+                    className={
+                      `fab fa-react text-blueGray-300 mr-2 text-base` +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>
+                  {sidebarOpen ? "NextJS" : ""}
                 </Link>
               </li>
             </ul>

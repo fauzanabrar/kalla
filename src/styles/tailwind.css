@@ -1333,6 +1333,14 @@ select {
   max-height: 860px;
 }
 
+.min-h-screen-25 {
+  min-height: 25vh;
+}
+
+.min-h-screen-50 {
+  min-height: 50vh;
+}
+
 .min-h-screen-75 {
   min-height: 75vh;
 }
@@ -2078,6 +2086,10 @@ select {
 
 .pl-0 {
   padding-left: 0px;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .pl-10 {

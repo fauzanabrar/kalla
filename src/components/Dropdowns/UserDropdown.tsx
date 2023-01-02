@@ -14,7 +14,7 @@ const UserDropdown = () => {
       btnDropdownRef.current as Element,
       popoverDropdownRef.current as HTMLElement,
       {
-        placement: "bottom-start",
+        placement: "bottom-end",
       }
     );
     setDropdownPopoverShow(true);
