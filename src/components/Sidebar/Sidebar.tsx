@@ -19,8 +19,8 @@ export default function Sidebar(props: SidebarProps) {
   return (
     <>
       <nav
-        className={`relative z-10 flex flex-wrap items-center justify-between bg-white py-4 pl-6 pr-3 shadow-xl md:fixed md:left-0 md:top-0 md:bottom-0 md:block md:flex-row md:flex-nowrap md:overflow-hidden md:overflow-y-auto ${
-          sidebarOpen ? "md:w-64" : "md:w-28"
+        className={`relative z-10 flex flex-wrap items-center justify-between bg-white py-4 pl-6 pr-0 shadow-xl md:fixed md:left-0 md:top-0 md:bottom-0 md:block md:flex-row md:flex-nowrap md:overflow-hidden md:overflow-y-auto ${
+          sidebarOpen ? "md:w-64" : "md:w-[90px]"
         }`}
       >
         <div className="mx-auto flex w-full flex-wrap items-center justify-between px-0 md:min-h-full md:flex-col md:flex-nowrap md:items-stretch">

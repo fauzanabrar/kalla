@@ -1,5 +1,5 @@
 {
-  "name": "admin-nextjs",
+  "name": "nextjs-admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,16 +21,19 @@
     "chart.js": "^4.1.1",
     "eslint": "8.30.0",
     "eslint-config-next": "^13.1.1",
+    "js-cookie": "^3.0.1",
     "next": "13.1.1",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-chartjs-2": "^5.1.0",
     "react-dom": "18.2.0",
     "react-table": "^7.8.0",
+    "react-toastify": "^9.1.1",
     "typescript": "4.9.4",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",

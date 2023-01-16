@@ -20,7 +20,7 @@ export default function AdminWithStats(props: AdminProps) {
       <div
         className={
           "bg-blueGray-100 relative z-0" +
-          (sidebarOpen ? " md:ml-64" : " md:ml-28")
+          (sidebarOpen ? " md:ml-64" : " md:ml-[90px]")
         }
       >
         <AdminNavbar />

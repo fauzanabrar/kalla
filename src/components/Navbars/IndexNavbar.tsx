@@ -6,6 +6,7 @@ import IndexDropdown from "../Dropdowns/IndexDropdown";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
   return (
     <>
       <nav className="navbar-expand-lg fixed top-0 z-50 flex w-full flex-wrap items-center justify-between bg-white px-2 py-3 shadow">
