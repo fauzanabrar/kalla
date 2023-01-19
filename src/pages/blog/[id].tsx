@@ -3,11 +3,11 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../components/Navbars/AuthNavbar";
-import Footer from "../components/Footers/Footer";
+import Navbar from "../../components/Navbars/AuthNavbar";
+import Footer from "../../components/Footers/Footer";
 import Image from "next/image";
 
-const Landing = () => {
+const SimulatorByID = () => {
   return (
     <>
       <Navbar />
@@ -573,9 +573,9 @@ const Landing = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
 
-export default Landing;
+export default SimulatorByID;

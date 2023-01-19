@@ -129,6 +129,38 @@ const IndexDropdown = () => {
         >
           Profile
         </Link>
+        <Link
+          href="/simulator"
+          className={
+            "text-blueGray-700 block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal"
+          }
+        >
+          Simulator
+        </Link>
+        <Link
+          href="/blog"
+          className={
+            "text-blueGray-700 block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal"
+          }
+        >
+          Blog
+        </Link>
+        <Link
+          href="/portfolio"
+          className={
+            "text-blueGray-700 block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal"
+          }
+        >
+          Portfolio
+        </Link>
+        <Link
+          href="/shop"
+          className={
+            "text-blueGray-700 block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal"
+          }
+        >
+          Shop
+        </Link>
       </div>
     </>
   );

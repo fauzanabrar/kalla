@@ -15,6 +15,7 @@ export default function Sidebar(props: SidebarProps) {
   // const [sidebarOpen, setSidebarOpen] = React.useState(true);
   const { sidebarOpen, setSidebarOpen } = props;
   const [submenuOpen, setSubmenuOpen] = React.useState(false);
+  const [activeSubmenu, setActiveSubmenu] = React.useState("");
   const router = useRouter();
   return (
     <>
@@ -112,7 +113,7 @@ export default function Sidebar(props: SidebarProps) {
                 <Link
                   href="/admin/dashboard"
                   className={
-                    "block py-3 text-xs font-bold uppercase " +
+                    "block items-center py-3 text-xs font-bold uppercase " +
                     (router.pathname.indexOf("/admin/dashboard") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
@@ -135,7 +136,7 @@ export default function Sidebar(props: SidebarProps) {
                 <Link
                   href="/admin/monitoring"
                   className={
-                    "block py-3 text-xs font-bold uppercase " +
+                    "block items-center py-3 text-xs font-bold uppercase " +
                     (router.pathname.indexOf("/admin/monitoring") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
@@ -156,32 +157,9 @@ export default function Sidebar(props: SidebarProps) {
 
               <li className="items-center">
                 <Link
-                  href="/simulator"
-                  className={
-                    "block py-3 text-xs font-bold uppercase " +
-                    (router.pathname.indexOf("/simulator") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
-                  }
-                >
-                  <i
-                    className={
-                      "fas fa-shopping-bag mr-2 text-sm " +
-                      (router.pathname.indexOf("/simulator") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300") +
-                      (sidebarOpen ? "" : " ml-3 flex-1")
-                    }
-                  ></i>{" "}
-                  {sidebarOpen ? "Simulator" : ""}
-                </Link>
-              </li>
-
-              <li className="items-center">
-                <Link
                   href="/admin/components"
                   className={
-                    "block py-3 text-xs font-bold uppercase " +
+                    "block items-center py-3 text-xs font-bold uppercase " +
                     (router.pathname.indexOf("/admin/components") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
@@ -204,7 +182,7 @@ export default function Sidebar(props: SidebarProps) {
                 <Link
                   href="/admin/settings"
                   className={
-                    "block py-3 text-xs font-bold uppercase " +
+                    "block items-center py-3 text-xs font-bold uppercase " +
                     (router.pathname.indexOf("/admin/settings") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
@@ -227,7 +205,7 @@ export default function Sidebar(props: SidebarProps) {
                 <Link
                   href="/admin/tables"
                   className={
-                    "block py-3 text-xs font-bold uppercase " +
+                    "block items-center py-3 text-xs font-bold uppercase " +
                     (router.pathname.indexOf("/admin/tables") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
@@ -250,7 +228,7 @@ export default function Sidebar(props: SidebarProps) {
                 <Link
                   href="/admin/maps"
                   className={
-                    "block py-3 text-xs font-bold uppercase " +
+                    "block items-center py-3 text-xs font-bold uppercase " +
                     (router.pathname.indexOf("/admin/maps") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
@@ -268,6 +246,104 @@ export default function Sidebar(props: SidebarProps) {
                   {sidebarOpen ? "Maps" : ""}
                 </Link>
               </li>
+
+              <li className="items-center">
+                <Link
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (!submenuOpen) {
+                      setActiveSubmenu("sales");
+                      console.log("activeSubmenu sales");
+                    } else {
+                      setActiveSubmenu("");
+                      console.log("activeSubmenu null");
+                    }
+                    setSubmenuOpen(!submenuOpen);
+                    console.log("submenu", !submenuOpen);
+                  }}
+                  className={
+                    "group flex w-full items-center py-3 text-xs font-bold uppercase transition duration-75 " +
+                    (router.pathname.indexOf("/admin/sales") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
+                    className={
+                      "fas fa-map-marked mr-2 text-sm " +
+                      (router.pathname.indexOf("/admin/sales") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300") +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  <span className="ml-1 flex-1 whitespace-nowrap text-left">
+                    {sidebarOpen ? "Sales" : ""}
+                  </span>
+                  <span
+                    className={
+                      "text-sm " +
+                      (sidebarOpen && activeSubmenu === "sales"
+                        ? "rotate-180"
+                        : "rotate-0") +
+                      (!sidebarOpen ? " hidden" : "")
+                    }
+                  >
+                    <svg
+                      className={"h-6 w-6 "}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path>
+                    </svg>
+                  </span>
+                </Link>
+
+                <ul
+                  id="dropdown-example"
+                  className={
+                    "item-center -mt-2 space-y-0 py-1" +
+                    (activeSubmenu !== "sales" ? " hidden" : "") +
+                    (sidebarOpen ? " pl-5" : " pl-3")
+                  }
+                >
+                  <li>
+                    <Link
+                      href="#"
+                      className={
+                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold uppercase" +
+                        (sidebarOpen ? " ml-2" : " ml-1")
+                      }
+                    >
+                      {sidebarOpen ? "Products" : "P"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className={
+                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold uppercase" +
+                        (sidebarOpen ? " ml-2" : " ml-1")
+                      }
+                    >
+                      {sidebarOpen ? "Billing" : "B"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/admin/invoice"
+                      className={
+                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold uppercase" +
+                        (sidebarOpen ? " ml-2" : " ml-1")
+                      }
+                    >
+                      {sidebarOpen ? "Invoice" : "I"}
+                    </Link>
+                  </li>
+                </ul>
+              </li>
             </ul>
 
             {/* Divider */}
@@ -282,7 +358,7 @@ export default function Sidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/auth/login"
-                  className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
+                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
                     className={
@@ -297,7 +373,7 @@ export default function Sidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/auth/register"
-                  className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
+                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
                     className={
@@ -322,7 +398,7 @@ export default function Sidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/landing"
-                  className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
+                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
                     className={
@@ -337,7 +413,7 @@ export default function Sidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/profile"
-                  className="text-blueGray-700 hover:text-blueGray-500 block py-3 text-xs font-bold uppercase"
+                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
                     className={
@@ -346,6 +422,95 @@ export default function Sidebar(props: SidebarProps) {
                     }
                   ></i>{" "}
                   {sidebarOpen ? "Profile Page" : ""}
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  href="/simulator"
+                  className={
+                    "block items-center py-3 text-xs font-bold uppercase " +
+                    (router.pathname.indexOf("/simulator") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
+                    className={
+                      "fas fa-shopping-bag mr-2 text-sm " +
+                      (router.pathname.indexOf("/simulator") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300") +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Simulator" : ""}
+                </Link>
+              </li>
+
+              <li className="items-center">
+                <Link
+                  href="/blog"
+                  className={
+                    "block items-center py-3 text-xs font-bold uppercase " +
+                    (router.pathname.indexOf("/blog") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
+                    className={
+                      "fas fa-blog mr-2 text-sm " +
+                      (router.pathname.indexOf("/blog") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300") +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Blog" : ""}
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  href="/portfolio"
+                  className={
+                    "block items-center py-3 text-xs font-bold uppercase " +
+                    (router.pathname.indexOf("/portfolio") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
+                    className={
+                      "fas fa-user-circle mr-2 text-sm " +
+                      (router.pathname.indexOf("/portfolio") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300") +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Portfolio" : ""}
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  href="/shop"
+                  className={
+                    "block items-center py-3 text-xs font-bold uppercase " +
+                    (router.pathname.indexOf("/shop") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                >
+                  <i
+                    className={
+                      "fas fa-shop mr-2 text-sm " +
+                      (router.pathname.indexOf("/shop") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300") +
+                      (sidebarOpen ? "" : " ml-3 flex-1")
+                    }
+                  ></i>{" "}
+                  {sidebarOpen ? "Shop" : ""}
                 </Link>
               </li>
             </ul>
