@@ -7,7 +7,7 @@ import CardSocialTraffic from "../../components/Cards/CardSocialTraffic";
 // components
 
 // layout for page
-import AdminWithStats from "../../layouts/AdminWithStats";
+import AdminWithStats from "../../layouts/MyLayouts/AdminWithStats";
 
 export default function DashboardView() {
   return (

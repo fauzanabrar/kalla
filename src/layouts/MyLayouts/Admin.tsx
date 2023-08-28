@@ -2,10 +2,10 @@ import React from "react";
 
 // components
 
-import AdminNavbar from "../components/Navbars/AdminNavbar";
-import Sidebar from "../components/Sidebar/Sidebar";
-import HeaderStats from "../components/Headers/HeaderStats";
-import FooterAdmin from "../components/Footers/FooterAdmin";
+
+import MySidebar from "../../components/MyComponent/Sidebar/MySidebar";
+import AdminNavbar from "../../components/Navbars/AdminNavbar";
+import FooterAdmin from "../../components/Footers/FooterAdmin";
 interface AdminProps {
   children: JSX.Element | JSX.Element[];
 }
@@ -15,7 +15,7 @@ export default function Admin(props: AdminProps) {
 
   return (
     <>
-      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <MySidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div
         className={
           "bg-blueGray-100 relative z-0" +

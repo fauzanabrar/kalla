@@ -1,4 +1,4 @@
-import DashboardView from "../../view/Dashboard/DashboardView";
+import DashboardView from "../../../view/Dashboard/DashboardView";
 
 export default function Dashboard() {
   return (
