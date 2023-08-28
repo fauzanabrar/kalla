@@ -16,7 +16,6 @@ import {
   sendGoogleToken,
   setLogin,
 } from "../../services/auth";
-import { Button } from "../../../@/components/ui/button";
 
 export default function Login() {
   const [focusedEmail, setFocusedEmail] = React.useState(true);
@@ -132,7 +131,6 @@ export default function Login() {
                     />
                     Google
                   </button>
-                  <Button>Click Here</Button>
                 </div>
                 <hr className="border-b-1 border-blueGray-300 mt-6" />
               </div>
