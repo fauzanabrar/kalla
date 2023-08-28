@@ -19,6 +19,7 @@
   ], // make sure prettier is last
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "@next/next/no-document-import-in-page": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
