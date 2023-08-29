@@ -15,7 +15,7 @@ import "../styles/custom.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import { ToastContainer } from "react-toastify";
-import { SidebarContextProvider } from "../context/SidebarContext";
+import { SidebarContextProvider } from "../lib/context/SidebarContext";
 
 let root: any = null;
 let container: any = null;
@@ -72,10 +72,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Custom NextJS</title>
         {/* <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> */}
       </Head>
-        <SidebarContextProvider>
-          <Component {...pageProps} />
-        </SidebarContextProvider>
-      
+      <SidebarContextProvider>
+        <Component {...pageProps} />
+      </SidebarContextProvider>
+
       <ToastContainer />
     </React.Fragment>
   );
