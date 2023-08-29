@@ -3,7 +3,7 @@ import Router from "next/router";
 
 export default class Admin extends Component {
   componentDidMount = () => {
-    Router.push("/admin/dashboard");
+    // Router.push("/admin/dashboard");
   };
 
   render() {

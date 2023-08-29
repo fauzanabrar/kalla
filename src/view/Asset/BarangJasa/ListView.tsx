@@ -1,7 +1,10 @@
 import React from 'react'
+import Admin from '../../../layouts/MyLayouts/Admin'
 
 export default function ListView() {
   return (
-    <div>ListView</div>
+    <Admin>
+      <div>ListView</div>
+    </Admin>
   )
 }

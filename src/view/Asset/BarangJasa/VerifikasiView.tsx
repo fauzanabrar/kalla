@@ -1,7 +1,10 @@
 import React from 'react'
+import Admin from '../../../layouts/MyLayouts/Admin'
 
 export default function VerifikasiView() {
   return (
-    <div>VerifikasiView</div>
+    <Admin>
+      <div>VerifikasiView</div>
+    </Admin>
   )
 }

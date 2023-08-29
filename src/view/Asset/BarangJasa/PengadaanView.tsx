@@ -1,7 +1,10 @@
 import React from 'react'
+import Admin from '../../../layouts/MyLayouts/Admin'
 
 export default function PengadaanView() {
   return (
-    <div>PengadaanView</div>
+    <Admin>
+      <div>PengadaanView</div>
+    </Admin>
   )
 }

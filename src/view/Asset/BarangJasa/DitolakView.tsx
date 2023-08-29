@@ -1,7 +1,10 @@
 import React from 'react'
+import Admin from '../../../layouts/MyLayouts/Admin'
 
 export default function DitolakView() {
   return (
-    <div>DitolakView</div>
+    <Admin>
+      <div>DitolakView</div>
+    </Admin>
   )
 }

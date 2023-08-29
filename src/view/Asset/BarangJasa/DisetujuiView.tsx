@@ -1,7 +1,10 @@
 import React from 'react'
+import Admin from '../../../layouts/MyLayouts/Admin'
 
 export default function DisetujuiView() {
   return (
-    <div>Disetujui</div>
+    <Admin>
+      <div>Disetujui</div>
+    </Admin>
   )
 }

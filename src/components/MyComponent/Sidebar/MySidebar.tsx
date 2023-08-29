@@ -8,14 +8,18 @@ import UserDropdown from "../../Dropdowns/UserDropdown";
 interface SidebarProps {
   setSidebarOpen?: any;
   sidebarOpen?: boolean;
+  activeSubmenuDashboard?: string;
+  activeSubmenuBarangJasa?: string;
 }
 
 export default function MySidebar(props: SidebarProps) {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   // const [sidebarOpen, setSidebarOpen] = React.useState(true);
   const { sidebarOpen, setSidebarOpen } = props;
-  const [submenuOpen, setSubmenuOpen] = React.useState(false);
-  const [activeSubmenu, setActiveSubmenu] = React.useState("");
+  const [submenuOpenDashboard, setSubmenuOpenDashboard] = React.useState(false);
+  const [submenuOpenBarangJasa, setSubmenuOpenBarangJasa] = React.useState(false);
+  const [activeSubmenuDashboard, setActiveSubmenuDashboard] = React.useState("");
+  const [activeSubmenuBarangJasa, setActiveSubmenuBarangJasa] = React.useState("");
   const router = useRouter();
   return (
     <>
@@ -105,7 +109,7 @@ export default function MySidebar(props: SidebarProps) {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="text-blueGray-500 block pb-4 pt-1 text-xs font-bold uppercase no-underline md:min-w-full">
-              {sidebarOpen ? "Asset" : ""}
+              {sidebarOpen ? "Home" : ""}
             </h6>
 
             <ul className="flex list-none flex-col md:min-w-full md:flex-col">
@@ -114,19 +118,19 @@ export default function MySidebar(props: SidebarProps) {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (!submenuOpen) {
-                      setActiveSubmenu("sales");
-                      console.log("activeSubmenu sales");
+                    if (!submenuOpenDashboard) {
+                      setActiveSubmenuDashboard("dashboard");
+                      console.log("activeSubmenu dashboard");
                     } else {
-                      setActiveSubmenu("");
+                      setActiveSubmenuDashboard("");
                       console.log("activeSubmenu null");
                     }
-                    setSubmenuOpen(!submenuOpen);
-                    console.log("submenu", !submenuOpen);
+                    setSubmenuOpenDashboard(!submenuOpenDashboard);
+                    console.log("submenu", !submenuOpenDashboard);
                   }}
                   className={
                     "group flex w-full items-center py-3 text-xs font-bold uppercase transition duration-75 " +
-                    (router.pathname.indexOf("/admin/sales") !== -1
+                    (router.pathname.indexOf("/admin/dashboard") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
@@ -134,7 +138,7 @@ export default function MySidebar(props: SidebarProps) {
                   <i
                     className={
                       "fas fa-home mr-2 text-sm " +
-                      (router.pathname.indexOf("/admin/sales") !== -1
+                      (router.pathname.indexOf("/admin/dashboard") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300") +
                       (sidebarOpen ? "" : " ml-3 flex-1")
@@ -146,7 +150,7 @@ export default function MySidebar(props: SidebarProps) {
                   <span
                     className={
                       "text-sm " +
-                      (sidebarOpen && activeSubmenu === "sales"
+                      (sidebarOpen && activeSubmenuDashboard === "dashboard"
                         ? "rotate-180"
                         : "rotate-0") +
                       (!sidebarOpen ? " hidden" : "")
@@ -167,24 +171,24 @@ export default function MySidebar(props: SidebarProps) {
                   id="dropdown-example"
                   className={
                     "item-center -mt-2 space-y-0 py-1" +
-                    (activeSubmenu !== "sales" ? " hidden" : "") +
+                    (activeSubmenuDashboard !== "dashboard" ? " hidden" : "") +
                     (sidebarOpen ? " pl-5" : " pl-3")
                   }
                 >
                   <li>
                     <Link
-                      href="#"
+                      href="/admin/dashboard/all"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
                       }
                     >
-                      {sidebarOpen ? "All" : "P"}
+                      {sidebarOpen ? "All" : ""}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/admin/dashboard/barang-jasa"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -195,7 +199,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="/admin/invoice"
+                      href="/admin/dashboard/maintenance"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -206,7 +210,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="/admin/invoice"
+                      href="/admin/dashboard/it-tools"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -230,19 +234,19 @@ export default function MySidebar(props: SidebarProps) {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (!submenuOpen) {
-                      setActiveSubmenu("sales");
-                      console.log("activeSubmenu sales");
+                    if (!submenuOpenBarangJasa) {
+                      setActiveSubmenuBarangJasa("barangjasa");
+                      console.log("activeSubmenu barangjasa");
                     } else {
-                      setActiveSubmenu("");
+                      setActiveSubmenuBarangJasa("");
                       console.log("activeSubmenu null");
                     }
-                    setSubmenuOpen(!submenuOpen);
-                    console.log("submenu", !submenuOpen);
+                    setSubmenuOpenBarangJasa(!submenuOpenBarangJasa);
+                    console.log("submenu", !submenuOpenBarangJasa);
                   }}
                   className={
                     "group flex w-full items-center py-3 text-xs font-bold uppercase transition duration-75 " +
-                    (router.pathname.indexOf("/admin/sales") !== -1
+                    (router.pathname.indexOf("/admin/asset/barang-jasa") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
@@ -250,19 +254,19 @@ export default function MySidebar(props: SidebarProps) {
                   <i
                     className={
                       "fas fa-map-marked mr-2 text-sm " +
-                      (router.pathname.indexOf("/admin/sales") !== -1
+                      (router.pathname.indexOf("/admin/asset/barang-jasa") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300") +
                       (sidebarOpen ? "" : " ml-3 flex-1")
                     }
                   ></i>{" "}
                   <span className="ml-1 flex-1 whitespace-nowrap text-left">
-                    {sidebarOpen ? "Sales" : ""}
+                    {sidebarOpen ? "Barang dan Jasa" : ""}
                   </span>
                   <span
                     className={
                       "text-sm " +
-                      (sidebarOpen && activeSubmenu === "sales"
+                      (sidebarOpen && activeSubmenuBarangJasa === "barangjasa"
                         ? "rotate-180"
                         : "rotate-0") +
                       (!sidebarOpen ? " hidden" : "")
@@ -283,13 +287,13 @@ export default function MySidebar(props: SidebarProps) {
                   id="dropdown-example"
                   className={
                     "item-center -mt-2 space-y-0 py-1" +
-                    (activeSubmenu !== "sales" ? " hidden" : "") +
+                    (activeSubmenuBarangJasa !== "barangjasa" ? " hidden" : "") +
                     (sidebarOpen ? " pl-5" : " pl-3")
                   }
                 >
                   <li>
                     <Link
-                      href="#"
+                      href="/admin/asset/barang-jasa/list"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -300,7 +304,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/admin/asset/barang-jasa/disetujui"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -311,7 +315,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="/admin/invoice"
+                      href="/admin/asset/barang-jasa/ditolak"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -322,7 +326,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="/admin/invoice"
+                      href="/admin/asset/barang-jasa/verifikasi"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -333,7 +337,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="/admin/invoice"
+                      href="/admin/asset/barang-jasa/pengadaan"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -344,7 +348,7 @@ export default function MySidebar(props: SidebarProps) {
                   </li>
                   <li>
                     <Link
-                      href="/admin/invoice"
+                      href="/admin/asset/barang-jasa/selesai"
                       className={
                         "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
                         (sidebarOpen ? " ml-2" : " ml-1")
@@ -361,7 +365,7 @@ export default function MySidebar(props: SidebarProps) {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="text-blueGray-500 block pb-4 pt-1 text-xs font-bold uppercase no-underline md:min-w-full">
-              {sidebarOpen ? "Auth Layout Pages" : ""}
+              {sidebarOpen ? "Account" : ""}
             </h6>
             {/* Navigation */}
 
@@ -408,7 +412,7 @@ export default function MySidebar(props: SidebarProps) {
             <ul className="flex list-none flex-col md:mb-4 md:min-w-full md:flex-col">
               <li className="items-center">
                 <Link
-                  href="/landing"
+                  href="/admin/settings/settings"
                   className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
