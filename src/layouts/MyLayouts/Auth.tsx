@@ -1,8 +1,8 @@
 import React from "react";
+import Navbar from "../../components/Navbars/AdminNavbar";
 
 // components
 
-import Navbar from "../components/Navbars/AuthNavbar";
 
 interface AuthProps {
   children: JSX.Element | JSX.Element[];

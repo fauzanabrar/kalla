@@ -1,21 +1,25 @@
-import React from "react";
 
 // components
 
-
+import React from "react";
 import MySidebar from "../../components/MyComponent/Sidebar/MySidebar";
 import AdminNavbar from "../../components/Navbars/AdminNavbar";
 import FooterAdmin from "../../components/Footers/FooterAdmin";
+
 interface AdminProps {
   children: JSX.Element | JSX.Element[];
 }
+
 export default function Admin(props: AdminProps) {
   const { children } = props;
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
 
   return (
     <>
-      <MySidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <MySidebar
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+          />
       <div
         className={
           "bg-blueGray-100 relative z-0" +

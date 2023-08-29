@@ -1,25 +1,34 @@
-import React from "react";
+'use client'
+import React, { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import NotificationDropdown from "../../Dropdowns/NotificationDropdown";
 import UserDropdown from "../../Dropdowns/UserDropdown";
+import { SidebarContext } from "../../../context/SidebarContext";
 
 interface SidebarProps {
   setSidebarOpen?: any;
   sidebarOpen?: boolean;
-  activeSubmenuDashboard?: string;
-  activeSubmenuBarangJasa?: string;
 }
 
 export default function MySidebar(props: SidebarProps) {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   // const [sidebarOpen, setSidebarOpen] = React.useState(true);
   const { sidebarOpen, setSidebarOpen } = props;
-  const [submenuOpenDashboard, setSubmenuOpenDashboard] = React.useState(false);
-  const [submenuOpenBarangJasa, setSubmenuOpenBarangJasa] = React.useState(false);
-  const [activeSubmenuDashboard, setActiveSubmenuDashboard] = React.useState("");
-  const [activeSubmenuBarangJasa, setActiveSubmenuBarangJasa] = React.useState("");
+  const context = useContext(SidebarContext);
+  
+  const {
+    activeSubmenuDashboard,
+    activeSubmenuBarangJasa,
+    setActiveSubmenuDashboard,
+    setActiveSubmenuBarangJasa,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  } = context || {setActiveSubmenuBarangJasa: () => {}, setActiveSubmenuDashboard: () => {}};
+  
+  const [submenuOpenDashboard, setSubmenuOpenDashboard] = React.useState( activeSubmenuDashboard === 'dashboard' ||false);
+  const [submenuOpenBarangJasa, setSubmenuOpenBarangJasa] = React.useState(activeSubmenuBarangJasa === 'barangjasa' ||false);
+
   const router = useRouter();
   return (
     <>
@@ -179,8 +188,12 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/dashboard/all"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/dashboard/all") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
+                        
                       }
                     >
                       {sidebarOpen ? "All" : ""}
@@ -190,8 +203,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/dashboard/barang-jasa"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/dashboard/barang-jasa") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Barang dan Jasa" : "B"}
@@ -201,8 +217,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/dashboard/maintenance"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/dashboard/maintenance") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Maintenance Asset" : "I"}
@@ -212,8 +231,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/dashboard/it-tools"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") + 
+                        (router.pathname.indexOf("/admin/dashboard/it-tools") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "IT Tools Asset" : "I"}
@@ -288,15 +310,18 @@ export default function MySidebar(props: SidebarProps) {
                   className={
                     "item-center -mt-2 space-y-0 py-1" +
                     (activeSubmenuBarangJasa !== "barangjasa" ? " hidden" : "") +
-                    (sidebarOpen ? " pl-5" : " pl-3")
+                    (sidebarOpen ? " pl-5" : " pl-3") 
                   }
                 >
                   <li>
                     <Link
                       href="/admin/asset/barang-jasa/list"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/asset/barang-jasa/list") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "List" : "P"}
@@ -306,8 +331,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/asset/barang-jasa/disetujui"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") + 
+                        (router.pathname.indexOf("/admin/asset/barang-jasa/disetujui") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Disetujui" : "B"}
@@ -317,8 +345,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/asset/barang-jasa/ditolak"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/asset/barang-jasa/ditolak") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Ditolak" : "I"}
@@ -328,8 +359,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/asset/barang-jasa/verifikasi"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") + 
+                        (router.pathname.indexOf("/admin/asset/barang-jasa/verifikasi") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Verifikasi" : "I"}
@@ -339,8 +373,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/asset/barang-jasa/pengadaan"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/asset/barang-jasa/pengadaan") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Pengadaan" : "I"}
@@ -350,8 +387,11 @@ export default function MySidebar(props: SidebarProps) {
                     <Link
                       href="/admin/asset/barang-jasa/selesai"
                       className={
-                        "text-blueGray-700 hover:text-blueGray-500 block py-2 text-xs font-bold" +
-                        (sidebarOpen ? " ml-2" : " ml-1")
+                        "block py-2 text-xs font-bold" +
+                        (sidebarOpen ? " ml-2" : " ml-1") +
+                        (router.pathname.indexOf("/admin/asset/barang-jasa/selesai") !== -1
+                          ? " text-lightBlue-500 hover:text-lightBlue-600"
+                          : " text-blueGray-700 hover:text-blueGray-500")
                       }
                     >
                       {sidebarOpen ? "Selesai" : "I"}
@@ -373,7 +413,7 @@ export default function MySidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/auth/login"
-                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
+                  className="block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
                     className={
@@ -388,7 +428,7 @@ export default function MySidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/auth/register"
-                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
+                  className="block items-center py-3 text-xs font-bold uppercase"
                 >
                   <i
                     className={
@@ -413,15 +453,23 @@ export default function MySidebar(props: SidebarProps) {
               <li className="items-center">
                 <Link
                   href="/admin/settings/settings"
-                  className="text-blueGray-700 hover:text-blueGray-500 block items-center py-3 text-xs font-bold uppercase"
+                  className={
+                    "block items-center py-3 text-xs font-bold uppercase" +
+                    (router.pathname.indexOf("/admin/settings/settings") !== -1
+                      ? " text-lightBlue-500 hover:text-lightBlue-600"
+                      : " text-blueGray-700 hover:text-blueGray-500")
+                  }
                 >
                   <i
                     className={
                       `fas fa-cog text-blueGray-400 mr-2 text-sm` +
-                      (sidebarOpen ? "" : " ml-3 flex-1")
+                      (sidebarOpen ? "" : " ml-3 flex-1") +
+                      (router.pathname.indexOf("/admin/settings/settings") !== -1
+                      ? " text-lightBlue-500 hover:text-lightBlue-600"
+                      : " text-blueGray-700 hover:text-blueGray-500")
                     }
                   ></i>{" "}
-                  {sidebarOpen ? "Settings" : ""}
+                  {sidebarOpen ? "SETTINGS" : ""}
                 </Link>
               </li>
             </ul>
