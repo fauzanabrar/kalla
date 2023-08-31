@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Button } from "../../../../../@/components/ui/button"
+import { Button } from "../../../../../@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,41 +9,52 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../../../../@/components/ui/dialog"
-import { Input } from "../../../../../@/components/ui/input"
-import { Label } from "../../../../../@/components/ui/label"
+} from "../../../../../@/components/ui/dialog";
+import { Input } from "../../../../../@/components/ui/input";
+import { Label } from "../../../../../@/components/ui/label";
+import { Textarea } from "../../../../../@/components/ui/textarea";
 
 export function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button variant="outline">Lihat</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
+          <DialogTitle>Detail Pengajuan</DialogTitle>
+          <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
+          <div className="grid w-full gap-1.5">
+            <Label htmlFor="name" >
+              User
             </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+            <Input id="name" placeholder="Alfian Arya" />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
+          <div className="grid w-full gap-1.5">
+            <Label htmlFor="username" >
+              Jabatan
             </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
+            <Input id="username" placeholder="General Affair - Head Office"  />
+          </div>
+          <div className="grid w-full gap-1.5">
+            <Label htmlFor="file" >
+              File
+            </Label>
+            <Input id="file1" type="file" />
+            <Input id="file2" type="file" />
+            <Input id="file3" type="file" />
+          </div>
+          <div className="grid w-full gap-1.5">
+            <Label htmlFor="keterangan">Keterangan</Label>
+            <Textarea placeholder="Type here." id="keterangan" />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit" variant={"secondary"} className="rounded-md border-s-2" >Kembali</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
