@@ -8,7 +8,6 @@ type PropsType = {
 export default function Pagination({ table }: PropsType) {
   const page = table.getState().pagination.pageIndex + 1;
   const maxPage = table.getPageCount();
-  console.log(table.getPageCount());
 
   const changeCurrentPage = (page: number, table: any) => {
     table.setPageIndex(page);
