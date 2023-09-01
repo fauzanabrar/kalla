@@ -40,6 +40,7 @@ import { DialogDemo } from "../Dialog/MyDialog";
 import { SelectDemo } from "../Select/Select";
 import { SelectPageSize } from "../Select/SelectPageSize";
 import Pagination from "../Pagination/Pagination";
+import StatusItem from "../../Status/StatusItem";
 
 export type Asset = {
   id: string;
@@ -297,7 +298,7 @@ export const columns: ColumnDef<Asset>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <StatusItem status={row.getValue("status")} />
     ),
   },
   {
@@ -341,8 +342,6 @@ export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
-  
-
   const changePageSize = (pageSize: number, table: TableType<Asset>) => {
     table.setPageSize(pageSize);
   };
@@ -374,7 +373,7 @@ export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
   return (
     <div className="w-full">
       <div>
-        <p className="text-2xl">{ tableName }</p>
+        <p className="text-2xl px-1">{ tableName }</p>
       </div>
       <div className="flex items-center py-4">
         <Input
