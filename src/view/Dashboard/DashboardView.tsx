@@ -15,7 +15,7 @@ export default function DashboardView() {
     <AdminWithStats>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
         <div className="px-4 py-5 flex-auto">
-          <DataTableAsset />
+          <DataTableAsset initialPageSize={5} />
           </div>
       </div>
     </AdminWithStats>

@@ -327,7 +327,11 @@ export const columns: ColumnDef<Asset>[] = [
   },
 ];
 
-export function DataTableAsset() {
+type PropsType = {
+  initialPageSize: number;
+};
+
+export function DataTableAsset({ initialPageSize} : PropsType) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -359,6 +363,11 @@ export function DataTableAsset() {
       columnVisibility,
       rowSelection,
     },
+    initialState : {
+      pagination: {
+        pageSize: initialPageSize,
+      }
+    }
   });
 
   return (
@@ -456,7 +465,7 @@ export function DataTableAsset() {
             onValueChange={(value: string) =>
               changePageSize(parseInt(value), table)
             }
-            defaultValue="10"
+            defaultValue="5"
           />
         </div>
         <div className="space-x-2">
