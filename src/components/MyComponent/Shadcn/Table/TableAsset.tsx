@@ -39,6 +39,7 @@ import { Input } from "../../../../../@/components/ui/input";
 import { DialogDemo } from "../Dialog/MyDialog";
 import { SelectDemo } from "../Select/Select";
 import { SelectPageSize } from "../Select/SelectPageSize";
+import Pagination from "../Pagination/Pagination";
 
 export type Asset = {
   id: string;
@@ -335,9 +336,7 @@ export function DataTableAsset() {
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
 
-  const changeCurrentPage = (page: number, table: TableType<Asset>) => {
-    table.setPageIndex(page);
-  };
+  
 
   const changePageSize = (pageSize: number, table: TableType<Asset>) => {
     table.setPageSize(pageSize);
@@ -359,12 +358,6 @@ export function DataTableAsset() {
       columnFilters,
       columnVisibility,
       rowSelection,
-    },
-    initialState: {
-      pagination: {
-        pageSize: 2,
-        pageIndex: 0,
-      },
     },
   });
 
@@ -467,61 +460,7 @@ export function DataTableAsset() {
           />
         </div>
         <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant={"outline"}
-            size="sm"
-            onClick={(e) => {
-              e.preventDefault();
-              changeCurrentPage(0, table);
-            }}
-          >
-            1
-          </Button>
-          <Button
-            variant={"outline"}
-            size="sm"
-            onClick={(e) => {
-              e.preventDefault();
-              changeCurrentPage(1, table);
-            }}
-          >
-            2
-          </Button>
-          <Button
-            variant={"outline"}
-            size="sm"
-            onClick={(e) => {
-              e.preventDefault();
-              changeCurrentPage(2, table);
-            }}
-          >
-            3
-          </Button>
-          {/* <input
-            type="number"
-            defaultValue={table.getState().pagination.pageIndex + 1}
-            onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              table.setPageIndex(page)
-            }}
-            className="border p-1 rounded w-16"
-          /> */}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+          <Pagination table={table}/>
         </div>
       </div>
     </div>
