@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
   SortingState,
+  Table as TableType,
   VisibilityState,
   flexRender,
   getCoreRowModel,
@@ -12,10 +13,10 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+} from "@tanstack/react-table";
+import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
 
-import { Checkbox } from "../../../../../@/components/ui/checkbox"
+import { Checkbox } from "../../../../../@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -24,7 +25,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../../../@/components/ui/dropdown-menu"
+} from "../../../../../@/components/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -32,20 +33,30 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../../../@/components/ui/table"
-import { Button } from "../../../../../@/components/ui/button"
-import { Input } from "../../../../../@/components/ui/input"
-import { DialogDemo } from "../Dialog/MyDialog"
+} from "../../../../../@/components/ui/table";
+import { Button } from "../../../../../@/components/ui/button";
+import { Input } from "../../../../../@/components/ui/input";
+import { DialogDemo } from "../Dialog/MyDialog";
+import { SelectDemo } from "../Select/Select";
+import { SelectPageSize } from "../Select/SelectPageSize";
+import Pagination from "../Pagination/Pagination";
 
 export type Asset = {
-  id: string
-  name: string
-  jenis: string
-  user: string
-  sbu: string
-  status: "Menunggu RAB" | "Menunggu PR" | "PR diupload" | "Diverifikasi" | "Pengadaan"  | "Selesai" | "Ditolak"
-  queue: number
-}
+  id: string;
+  name: string;
+  jenis: string;
+  user: string;
+  sbu: string;
+  status:
+    | "Menunggu RAB"
+    | "Menunggu PR"
+    | "PR diupload"
+    | "Diverifikasi"
+    | "Pengadaan"
+    | "Selesai"
+    | "Ditolak";
+  queue: number;
+};
 
 const assetData: Asset[] = [
   {
@@ -210,16 +221,15 @@ const assetData: Asset[] = [
     status: "Menunggu RAB",
     queue: 3,
   },
-]
+];
 
 interface nameType {
   row: {
     original: {
       name: string;
       jenis: string;
-    }
-  }
-  
+    };
+  };
 }
 
 export const columns: ColumnDef<Asset>[] = [
@@ -234,12 +244,12 @@ export const columns: ColumnDef<Asset>[] = [
           Name
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
-    cell: ({ row } : nameType) => (
+    cell: ({ row }: nameType) => (
       <div>
-        <div className="capitalize">{ row.original.name }</div>
-        <div className="capitalize">{ row.original.jenis }</div>
+        <div className="capitalize">{row.original.name}</div>
+        <div className="capitalize">{row.original.jenis}</div>
       </div>
     ),
   },
@@ -254,11 +264,9 @@ export const columns: ColumnDef<Asset>[] = [
           User
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
-    cell: ({ row }) => (
-      <div className="capitalize">{ row.getValue("user")}</div>
-    ),
+    cell: ({ row }) => <div className="capitalize">{row.getValue("user")}</div>,
   },
   {
     accessorKey: "sbu",
@@ -271,11 +279,9 @@ export const columns: ColumnDef<Asset>[] = [
           SBU
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
-    cell: ({ row }) => (
-      <div className="capitalize">{ row.getValue("sbu")}</div>
-    ),
+    cell: ({ row }) => <div className="capitalize">{row.getValue("sbu")}</div>,
   },
   {
     accessorKey: "status",
@@ -288,7 +294,7 @@ export const columns: ColumnDef<Asset>[] = [
           Status
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
     },
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("status")}</div>
@@ -306,33 +312,37 @@ export const columns: ColumnDef<Asset>[] = [
           Queue
           <ArrowUpDown className="h-4" />
         </Button>
-      )
+      );
     },
     cell: ({ row }) => (
-      <div className="capitalize text-center">{ row.getValue("queue")}</div>
+      <div className="text-center capitalize">{row.getValue("queue")}</div>
     ),
   },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      return (
-        <DialogDemo />
-      )
+      return <DialogDemo />;
     },
   },
-]
+];
 
 export function DataTableAsset() {
-  const [sorting, setSorting] = React.useState<SortingState>([])
+  const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
-  )
+  );
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
+    React.useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = React.useState({});
 
-  const table = useReactTable({
+  
+
+  const changePageSize = (pageSize: number, table: TableType<Asset>) => {
+    table.setPageSize(pageSize);
+  };
+
+  const table: TableType<Asset> = useReactTable({
     data: assetData,
     columns,
     onSortingChange: setSorting,
@@ -349,13 +359,7 @@ export function DataTableAsset() {
       columnVisibility,
       rowSelection,
     },
-    initialState : {
-      pagination: {
-        pageSize: 2,
-        pageIndex: 0,
-      },
-    }
-  })
+  });
 
   return (
     <div className="w-full">
@@ -390,7 +394,7 @@ export function DataTableAsset() {
                   >
                     {column.id}
                   </DropdownMenuCheckboxItem>
-                )
+                );
               })}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -410,7 +414,7 @@ export function DataTableAsset() {
                             header.getContext()
                           )}
                     </TableHead>
-                  )
+                  );
                 })}
               </TableRow>
             ))}
@@ -446,34 +450,19 @@ export function DataTableAsset() {
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <input
-            type="number"
-            defaultValue={table.getState().pagination.pageIndex + 1}
-            onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              table.setPageIndex(page)
-            }}
-            className="border p-1 rounded w-16"
+        <div className="flex-1 text-sm text-muted-foreground">
+          <span>Page per row : </span>
+          <SelectPageSize
+            onValueChange={(value: string) =>
+              changePageSize(parseInt(value), table)
+            }
+            defaultValue="10"
           />
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+        </div>
+        <div className="space-x-2">
+          <Pagination table={table}/>
         </div>
       </div>
     </div>
-  )
+  );
 }
