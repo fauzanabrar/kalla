@@ -75,6 +75,141 @@ const assetData: Asset[] = [
     status: "Menunggu RAB",
     queue: 3,
   },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 1,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputerisasi",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 2,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 3,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 1,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputerisasi",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 2,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 3,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 1,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputerisasi",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 2,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 3,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 1,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputerisasi",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 2,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 3,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 1,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputerisasi",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 2,
+  },
+  {
+    id: "m5gr84i9",
+    name: "Pembelian Komputer",
+    jenis: "Komputer",
+    user: "jflkdasf",
+    sbu: "SBU 1",
+    status: "Menunggu RAB",
+    queue: 3,
+  },
 ]
 
 interface nameType {
@@ -181,11 +316,7 @@ export const columns: ColumnDef<Asset>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-
       return (
-        // <Button className="text-white bg-slate-700 block m-auto">
-        //   Lihat
-        // </Button>
         <DialogDemo />
       )
     },
@@ -218,6 +349,12 @@ export function DataTableAsset() {
       columnVisibility,
       rowSelection,
     },
+    initialState : {
+      pagination: {
+        pageSize: 2,
+        pageIndex: 0,
+      },
+    }
   })
 
   return (
@@ -318,6 +455,15 @@ export function DataTableAsset() {
           >
             Previous
           </Button>
+          <input
+            type="number"
+            defaultValue={table.getState().pagination.pageIndex + 1}
+            onChange={e => {
+              const page = e.target.value ? Number(e.target.value) - 1 : 0
+              table.setPageIndex(page)
+            }}
+            className="border p-1 rounded w-16"
+          />
           <Button
             variant="outline"
             size="sm"
