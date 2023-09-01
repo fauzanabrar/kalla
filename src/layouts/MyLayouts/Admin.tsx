@@ -3,8 +3,8 @@
 
 import React from "react";
 import MySidebar from "../../components/MyComponent/Sidebar/MySidebar";
-import AdminNavbar from "../../components/Navbars/AdminNavbar";
 import FooterAdmin from "../../components/Footers/FooterAdmin";
+import NavbarWithoutDasboard from "../../components/MyComponent/Navbar/AdminNavbarWithoutDashboard";
 
 interface AdminProps {
   children: JSX.Element | JSX.Element[];
@@ -26,7 +26,7 @@ export default function Admin(props: AdminProps) {
           (sidebarOpen ? " md:ml-64" : " md:ml-[90px]")
         }
       >
-        <AdminNavbar />
+        <NavbarWithoutDasboard />
         {/* Header */}
         <div className="bg-blueGray-800 relative mb-8 pb-12 pt-8 md:pt-12">
           <div className="mx-auto w-full px-4 md:px-10">
