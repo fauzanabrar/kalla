@@ -328,10 +328,11 @@ export const columns: ColumnDef<Asset>[] = [
 ];
 
 type PropsType = {
+  tableName: string;
   initialPageSize: number;
 };
 
-export function DataTableAsset({ initialPageSize} : PropsType) {
+export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -372,6 +373,9 @@ export function DataTableAsset({ initialPageSize} : PropsType) {
 
   return (
     <div className="w-full">
+      <div>
+        <p className="text-2xl">{ tableName }</p>
+      </div>
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
