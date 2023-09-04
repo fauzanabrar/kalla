@@ -24,6 +24,7 @@ import { Label } from "../../../../../@/components/ui/label";
 import { Textarea } from "../../../../../@/components/ui/textarea";
 import { ScrollArea } from "../../../../../@/components/ui/scroll-area";
 import MyDialogContent from "../DialogContent/MyDialogContent";
+import PengajuanDialogContent from "../DialogContent/PengajuanDialogContentPengajuan";
 
 export function DialogDemo() {
   const [open, setOpen2] = React.useState(false);
@@ -65,7 +66,7 @@ export function DialogDemo() {
             <TabsTrigger value="pengadaan">Pengadaan</TabsTrigger>
           </TabsList>
           <TabsContent value="pengajuan">
-            <MyDialogContent
+            <PengajuanDialogContent
               inputFiles={inputFiles}
               handleAddInputFile={handleAddInputFile}
               handleRemoveInputFile={handleRemoveInputFile}
