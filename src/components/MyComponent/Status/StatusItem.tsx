@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "../../../../@/lib/utils";
 
 const statusVariants = cva(
-  "rounded-full h-fit w-fit px-3 py-1 flex justify-center",
+  "rounded-full h-fit w-fit px-3 py-1 flex justify-center whitespace-nowrap",
   {
     variants: {
       variant: {
@@ -27,7 +27,11 @@ type StatusItemProps = {
   status: string;
 };
 
-export default function StatusItem({ className, variant, ...props }: StatusItemProps) {
+export default function StatusItem({
+  className,
+  variant,
+  ...props
+}: StatusItemProps) {
   return (
     <div className={cn(statusVariants({ variant, className }))}>
       {props.status}

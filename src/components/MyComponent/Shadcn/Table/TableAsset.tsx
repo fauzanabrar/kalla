@@ -249,8 +249,8 @@ export const columns: ColumnDef<Asset>[] = [
     },
     cell: ({ row }: nameType) => (
       <div>
-        <div className="capitalize">{row.original.name}</div>
-        <div className="capitalize">{row.original.jenis}</div>
+        <div className="capitalize whitespace-nowrap">{row.original.name}</div>
+        <div className="capitalize text-neutral-400">{row.original.jenis}</div>
       </div>
     ),
   },
