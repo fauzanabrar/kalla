@@ -40,7 +40,7 @@ export default function MySidebar(props: SidebarProps) {
   return (
     <>
       <nav
-        className={`relative z-10 flex flex-wrap items-center justify-between bg-white py-4 pl-6 pr-0 shadow-xl md:fixed md:bottom-0 md:left-0 md:top-0 md:block md:flex-row md:flex-nowrap md:overflow-hidden md:overflow-y-auto ${
+        className={`relative z-10 flex flex-wrap items-center justify-between bg-white py-4 pl-6 pr-3 shadow-xl md:fixed md:bottom-0 md:left-0 md:top-0 md:block md:flex-row md:flex-nowrap md:overflow-hidden md:overflow-y-auto ${
           sidebarOpen ? "md:w-64" : "md:w-[90px]"
         }`}
       >
@@ -165,7 +165,7 @@ export default function MySidebar(props: SidebarProps) {
                   </span>
                   <span
                     className={
-                      "text-sm " +
+                      "text-sm pr-3 " +
                       (sidebarOpen && activeSubmenuDashboard === "dashboard"
                         ? "rotate-180"
                         : "rotate-0") +
@@ -300,7 +300,7 @@ export default function MySidebar(props: SidebarProps) {
                   </span>
                   <span
                     className={
-                      "text-sm " +
+                      "text-sm pr-3 " +
                       (sidebarOpen && activeSubmenuBarangJasa === "barangjasa"
                         ? "rotate-180"
                         : "rotate-0") +
