@@ -323,7 +323,11 @@ export const columns: ColumnDef<Asset>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      return <DialogDemo />;
+      return (
+        <div className="flex justify-center">
+          <DialogDemo />
+        </div>
+      );
     },
   },
 ];
