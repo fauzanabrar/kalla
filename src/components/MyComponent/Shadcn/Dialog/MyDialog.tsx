@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Button } from "../../../../../@/components/ui/button";
 import {
   Dialog,
@@ -15,10 +16,15 @@ import { Label } from "../../../../../@/components/ui/label";
 import { Textarea } from "../../../../../@/components/ui/textarea";
 
 export function DialogDemo() {
+  const [open, setOpen2] = React.useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen2}>
       <DialogTrigger asChild>
-        <Button variant="outline">Lihat</Button>
+        <Button variant="outline" onClick={e => {
+          e.preventDefault();
+          setOpen2(true);
+        }}>Lihat</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -52,7 +58,10 @@ export function DialogDemo() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" variant={"secondary"} className="rounded-md border-s-2" >Kembali</Button>
+          <Button type="submit" variant={"secondary"} className="rounded-md border-s-2" onClick={e => {
+            e.preventDefault()
+            setOpen2(false)
+          }}>Kembali</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
