@@ -6,7 +6,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogContent
+  DialogContent,
 } from "../../../../../@/components/ui/dialog";
 import { Input } from "../../../../../@/components/ui/input";
 import { Label } from "../../../../../@/components/ui/label";
@@ -20,28 +20,31 @@ interface MyDialogContentProps {
   setOpen2: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function MyDialogContent({inputFiles, handleAddInputFile, handleRemoveInputFile, setOpen2}: MyDialogContentProps) {
+export default function MyDialogContent({
+  inputFiles,
+  handleAddInputFile,
+  handleRemoveInputFile,
+  setOpen2,
+}: MyDialogContentProps) {
   return (
-    <DialogContent>
-      <DialogHeader>
-        <DialogTitle>Detail Pengajuan</DialogTitle>
-        <DialogDescription></DialogDescription>
-      </DialogHeader>
-      <ScrollArea className="flex h-[450px] items-center pr-5">
+    <div>
+      <ScrollArea className="flex h-[420px] items-center pr-5">
         <div className="grid gap-4 px-2 py-4">
           <div className="grid w-full gap-1.5">
             <Label htmlFor="name">User</Label>
             <Input id="name" placeholder="Alfian Arya" />
           </div>
-          <div className="grid w-full gap-1.5">
-            <Label htmlFor="jabatan">Jabatan</Label>
-            <Input id="jabatan" placeholder="General Affair" />
+          <div className="grid grid-cols-2 gap-2">
+            <div className="grid w-full gap-1.5">
+              <Label htmlFor="jabatan">Jabatan</Label>
+              <Input id="jabatan" placeholder="General Affair" />
+            </div>
+            <div className="grid w-full gap-1.5">
+              <Label htmlFor="sbu">SBU</Label>
+              <Input id="sbu" placeholder="Head Office" />
+            </div>
           </div>
-          <div className="grid w-full gap-1.5">
-            <Label htmlFor="sbu">SBU</Label>
-            <Input id="sbu" placeholder="Head Office" />
-          </div>
-          <div className="grid w-full gap-1.5">
+          <div className="grid w-72 gap-1.5">
             <Label htmlFor="file">File</Label>
             {inputFiles.map((inputFile, index) => {
               return (
@@ -87,6 +90,6 @@ export default function MyDialogContent({inputFiles, handleAddInputFile, handleR
           Kembali
         </Button>
       </DialogFooter>
-    </DialogContent>
+    </div>
   );
 }
