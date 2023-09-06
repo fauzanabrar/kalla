@@ -22,6 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../../../@/components/ui/select"
+import { DateTimePicker } from "../../../../../@/components/ui/date-time-picker/date-time-picker";
 
 interface MyDialogContentProps {
   inputFiles: { id: string }[];
@@ -107,6 +108,10 @@ export default function PengajuanDialogContent({
           <div className="grid w-full gap-1.5">
             <Label htmlFor="keterangan">Keterangan</Label>
             <Textarea placeholder="Type here." id="keterangan" />
+          </div>
+          <div className="grid w-full gap-1.5">
+            <Label htmlFor="waktu-pengajuan">Tanggal dan Waktu Pengajuan</Label>
+            <DateTimePicker granularity="minute" shouldCloseOnSelect={true} />
           </div>
         </div>
       </ScrollArea>
