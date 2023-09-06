@@ -114,11 +114,11 @@ export default function PengajuanDialogContent({
             <DateTimePicker granularity="minute" shouldCloseOnSelect={true} />
           </div>
         </div>
-      </ScrollArea>
-      <DialogFooter>
+        <DialogFooter>
+          <div className="flex justify-start w-full">
+            
         <Button
-          type="submit"
-          variant={"secondary"}
+          variant={"outline"}
           className="rounded-md border-s-2"
           onClick={(e) => {
             e.preventDefault();
@@ -127,7 +127,9 @@ export default function PengajuanDialogContent({
         >
           Kembali
         </Button>
+          </div>
       </DialogFooter>
+      </ScrollArea>
     </div>
   );
 }
