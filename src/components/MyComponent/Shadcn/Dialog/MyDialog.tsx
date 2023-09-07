@@ -52,13 +52,13 @@ export function DialogDemo() {
           Lihat
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="scale-95 sm:scale-100">
         <DialogHeader>
           <DialogTitle>Detail Pengajuan</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <Tabs defaultValue="pengajuan">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid scale-90 sm:scale-100 w-full grid-cols-5 mb-4">
             <TabsTrigger value="pengajuan">Pengajuan</TabsTrigger>
             <TabsTrigger value="rab">RAB</TabsTrigger>
             <TabsTrigger value="pr">PR</TabsTrigger>
