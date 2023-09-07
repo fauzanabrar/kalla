@@ -25,7 +25,7 @@ export default function AdminWithStats(props: AdminProps) {
         <AdminNavbar />
         {/* Header */}
         <HeaderStats />
-        <div className="-m-24 mx-auto w-full px-4 md:px-10 mb-12">
+        <div className="-mt-24 mx-auto w-full px-4 md:px-10 mb-16">
           {children}
         </div>
       </div>

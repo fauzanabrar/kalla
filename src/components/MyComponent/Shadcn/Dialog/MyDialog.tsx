@@ -71,6 +71,8 @@ export function DialogDemo() {
               handleAddInputFile={handleAddInputFile}
               handleRemoveInputFile={handleRemoveInputFile}
               setOpen2={setOpen2}
+              data={''}
+              selectOnValueChange={() => console.log('')}
             />
           </TabsContent>
           <TabsContent value="rab">

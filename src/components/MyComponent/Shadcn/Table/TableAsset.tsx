@@ -465,8 +465,8 @@ export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
+      <div className="flex flex-wrap-reverse items-center justify-start sm:justify-end space-x-2 py-4">
+        <div className="flex-1 mt-6 sm:mt-0 text-sm text-muted-foreground">
           <span>Page per row : </span>
           <SelectPageSize
             onValueChange={(value: string) =>
