@@ -77,7 +77,7 @@ export type Payment = {
 }
 
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     id: "select",
     header: "Name",

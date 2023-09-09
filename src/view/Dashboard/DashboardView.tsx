@@ -2,10 +2,9 @@ import React from "react";
 
 // layout for page
 import AdminWithStats from "../../layouts/MyLayouts/AdminWithStats";
-import { DataTableAsset } from "../../components/MyComponent/Shadcn/Table/TableAsset";
+import { DataTableAsset } from "@/components";
 
-
-export default function DashboardView() {
+export default function DashboardView(): JSX.Element {
   return (
     <AdminWithStats>
       <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-white shadow-lg">
