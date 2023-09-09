@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Button } from "../../../../../@/components/ui/button";
+import { v1 as uuidv1 } from 'uuid';
 import {
   Dialog,
   DialogContent,
@@ -28,14 +29,28 @@ import PengajuanDialogContent from "../DialogContent/PengajuanDialogContentPenga
 
 export function DialogDemo() {
   const [open, setOpen2] = React.useState(false);
-  const [inputFiles, setInputFiles] = React.useState([{ id: "file1" }]);
+  const [inputFiles, setInputFiles] = React.useState([{ id: `fileId-${uuidv1()}`, file: null }]);
 
+
+  console.log('input files:', inputFiles);
+  
   const handleAddInputFile = () => {
-    setInputFiles([...inputFiles, { id: `file${inputFiles.length + 1}` }]);
+    setInputFiles([...inputFiles, { id: `fileId-${uuidv1()}`, file:null }]);
   };
 
+  const handleFileChange = (id: string, event: React.ChangeEvent<HTMLInputElement>): void => {
+    const updatedInputFiles = inputFiles.map((inputFile) => {
+      if (inputFile.id === id) {
+        return { ...inputFile, file: event.target.files ? event.target.files[0] : null };
+      }
+      return inputFile;
+    });
+
+    setInputFiles(updatedInputFiles as { id: string; file: null }[]);
+  }
+
   const handleRemoveInputFile = (id: string) => {
-    console.log(id);
+    console.log('id removed:',id);
     setInputFiles(inputFiles.filter((inputFile) => inputFile.id !== id));
   };
 

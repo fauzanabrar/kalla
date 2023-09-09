@@ -96,7 +96,7 @@ export default function PengajuanDialogContent({
                     <Button
                       variant="outline"
                       className="rounded-md border-s-2"
-                      onClick={handleAddInputFile}
+                      onClick={e => handleAddInputFile()}
                     >
                       +
                     </Button>
