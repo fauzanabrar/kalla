@@ -5,7 +5,7 @@ type PropsType = {
   table: any;
 };
 
-export default function Pagination({ table }: PropsType) {
+export function Pagination({ table }: PropsType) {
   const page = table.getState().pagination.pageIndex + 1;
   const maxPage = table.getPageCount();
 

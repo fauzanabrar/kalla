@@ -1,1 +1,1 @@
-export * from "./MyComponent/Shadcn/Table"
+export * from "./MyComponent/Shadcn"

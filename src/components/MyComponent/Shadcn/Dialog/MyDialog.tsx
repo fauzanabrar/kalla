@@ -20,7 +20,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import MyDialogContent from "../DialogContent/MyDialogContent";
-import PengajuanDialogContent from "../DialogContent/PengajuanDialogContentPengajuan";
+import PengajuanDialogContent from "../DialogContent/PengajuanDialogContent";
 
 export function DialogDemo() {
   const [open, setOpen2] = React.useState(false);

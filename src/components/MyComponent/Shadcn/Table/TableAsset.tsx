@@ -39,7 +39,7 @@ import { Input } from "@/components/ui/input";
 import { DialogDemo } from "../Dialog/MyDialog";
 import { SelectDemo } from "../Select/Select";
 import { SelectPageSize } from "../Select/SelectPageSize";
-import Pagination from "../Pagination/Pagination";
+import {Pagination} from "../Pagination/Pagination";
 import StatusItem from "../../Status/StatusItem";
 
 export type Asset = {
