@@ -64,6 +64,13 @@
       "parserOptions": {
         "project": ["./tsconfig.json"]
       }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "import/extensions": "off",
+      }
     }
   ]
 }
