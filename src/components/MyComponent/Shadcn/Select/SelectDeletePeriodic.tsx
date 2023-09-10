@@ -8,18 +8,21 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../../../../../@/components/ui/select";
+} from "@/components/ui/select";
 
 type PropsType = {
   onValueChange: (value: string) => void;
   defaultValue: string;
 };
 
-export function SelectDeletePeriodic({onValueChange, defaultValue}: PropsType) {
+export function SelectDeletePeriodic({
+  onValueChange,
+  defaultValue,
+}: PropsType) {
   return (
     <div>
       <Select onValueChange={onValueChange} defaultValue={defaultValue}>
-        <SelectTrigger className="w-fit mx-2">
+        <SelectTrigger className="mx-2 w-fit">
           <SelectValue className="p-12" />
         </SelectTrigger>
         <SelectContent>

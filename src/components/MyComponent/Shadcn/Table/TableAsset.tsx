@@ -16,7 +16,7 @@ import {
 } from "@tanstack/react-table";
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
 
-import { Checkbox } from "../../../../../@/components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -25,7 +25,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../../../@/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -33,9 +33,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../../../@/components/ui/table";
-import { Button } from "../../../../../@/components/ui/button";
-import { Input } from "../../../../../@/components/ui/input";
+} from "@/components/ui/table";
+import { Button } from "../../../ui/button";
+import { Input } from "@/components/ui/input";
 import { DialogDemo } from "../Dialog/MyDialog";
 import { SelectDemo } from "../Select/Select";
 import { SelectPageSize } from "../Select/SelectPageSize";
@@ -249,7 +249,7 @@ export const columns: ColumnDef<Asset>[] = [
     },
     cell: ({ row }: nameType) => (
       <div>
-        <div className="capitalize whitespace-nowrap">{row.original.name}</div>
+        <div className="whitespace-nowrap capitalize">{row.original.name}</div>
         <div className="capitalize text-neutral-400">{row.original.jenis}</div>
       </div>
     ),
@@ -297,9 +297,7 @@ export const columns: ColumnDef<Asset>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => (
-      <StatusItem status={row.getValue("status")} />
-    ),
+    cell: ({ row }) => <StatusItem status={row.getValue("status")} />,
   },
   {
     accessorKey: "queue",
@@ -337,7 +335,7 @@ type PropsType = {
   initialPageSize: number;
 };
 
-export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
+export function DataTableAsset({ initialPageSize, tableName }: PropsType) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -367,17 +365,17 @@ export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
       columnVisibility,
       rowSelection,
     },
-    initialState : {
+    initialState: {
       pagination: {
         pageSize: initialPageSize,
-      }
-    }
+      },
+    },
   });
 
   return (
     <div className="w-full">
       <div>
-        <p className="text-2xl px-1">{ tableName }</p>
+        <p className="px-1 text-2xl">{tableName}</p>
       </div>
       <div className="flex items-center py-4">
         <Input
@@ -465,8 +463,8 @@ export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex flex-wrap-reverse items-center justify-start sm:justify-end space-x-2 py-4">
-        <div className="flex-1 mt-6 sm:mt-0 text-sm text-muted-foreground">
+      <div className="flex flex-wrap-reverse items-center justify-start space-x-2 py-4 sm:justify-end">
+        <div className="mt-6 flex-1 text-sm text-muted-foreground sm:mt-0">
           <span>Page per row : </span>
           <SelectPageSize
             onValueChange={(value: string) =>
@@ -476,7 +474,7 @@ export function DataTableAsset({ initialPageSize, tableName} : PropsType) {
           />
         </div>
         <div className="space-x-2">
-          <Pagination table={table}/>
+          <Pagination table={table} />
         </div>
       </div>
     </div>

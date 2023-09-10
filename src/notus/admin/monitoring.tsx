@@ -2,8 +2,8 @@ import React from "react";
 
 // components
 
-import CardTable from "../../components/Cards/CardTable";
-import ApiTable from "../../components/MonitoringContent/ApiTable";
+import CardTable from "../../components/Notus/Cards/CardTable";
+import ApiTable from "../../components/Notus/MonitoringContent/ApiTable";
 
 // layout for page
 

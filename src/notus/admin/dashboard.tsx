@@ -1,8 +1,8 @@
 import React from "react";
-import CardBarChart from "../../components/Cards/CardBarChart";
-import CardLineChart from "../../components/Cards/CardLineChart";
-import CardPageVisits from "../../components/Cards/CardPageVisits";
-import CardSocialTraffic from "../../components/Cards/CardSocialTraffic";
+import CardBarChart from "../../components/Notus/Cards/CardBarChart";
+import CardLineChart from "../../components/Notus/Cards/CardLineChart";
+import CardPageVisits from "../../components/Notus/Cards/CardPageVisits";
+import CardSocialTraffic from "../../components/Notus/Cards/CardSocialTraffic";
 
 // components
 

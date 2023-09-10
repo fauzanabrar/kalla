@@ -2,10 +2,10 @@ import React from "react";
 
 // components
 
-import AdminNavbar from "../components/Navbars/AdminNavbar";
-import Sidebar from "../components/Sidebar/Sidebar";
-import HeaderStats from "../components/Headers/HeaderStats";
-import FooterAdmin from "../components/Footers/FooterAdmin";
+import AdminNavbar from "../components/Notus/Navbars/AdminNavbar";
+import Sidebar from "../components/Notus/Sidebar/Sidebar";
+import HeaderStats from "../components/Notus/Headers/HeaderStats";
+import FooterAdmin from "../components/Notus/Footers/FooterAdmin";
 interface AdminProps {
   children: JSX.Element | JSX.Element[];
 }

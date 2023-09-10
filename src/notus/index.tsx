@@ -2,8 +2,8 @@
 import React from "react";
 import Link from "next/link";
 
-import IndexNavbar from "../components/Navbars/IndexNavbar";
-import Footer from "../components/Footers/Footer";
+import IndexNavbar from "../components/Notus/Navbars/IndexNavbar";
+import Footer from "../components/Notus/Footers/Footer";
 
 export default function Index() {
   return (
@@ -34,13 +34,13 @@ export default function Index() {
                 <a
                   href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/overview/notus?ref=nnjs-index"
                   target="_blank"
-                  className="get-started bg-blueGray-400 active:bg-blueGray-500 mr-1 mb-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+                  className="get-started bg-blueGray-400 active:bg-blueGray-500 mb-1 mr-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
                 >
                   Get started
                 </a>
                 <a
                   href="https://github.com/creativetimofficial/notus-nextjs?ref=nnjs-index"
-                  className="github-star bg-blueGray-700 active:bg-blueGray-600 ml-1 mr-1 mb-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none"
+                  className="github-star bg-blueGray-700 active:bg-blueGray-600 mb-1 ml-1 mr-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none"
                   target="_blank"
                 >
                   Github Star
@@ -50,7 +50,7 @@ export default function Index() {
           </div>
         </div>
         <img
-          className="b-auto max-h-860-px absolute top-0 right-0 -mt-48 w-10/12 pt-16 sm:mt-0 sm:w-6/12"
+          className="b-auto max-h-860-px absolute right-0 top-0 -mt-48 w-10/12 pt-16 sm:mt-0 sm:w-6/12"
           src="/img/pattern_nextjs.png"
           alt="..."
         />
@@ -58,7 +58,7 @@ export default function Index() {
 
       <section className="bg-blueGray-100 relative mt-48 pb-40 md:mt-40">
         <div
-          className="absolute top-0 bottom-auto left-0 right-0 -mt-20 h-20 w-full"
+          className="absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full"
           style={{ transform: "translateZ(0)" }}
         >
           <svg
@@ -78,7 +78,7 @@ export default function Index() {
         </div>
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center">
-            <div className="mr-auto ml-auto -mt-32 w-10/12 px-12 md:w-6/12 md:px-4 lg:w-4/12">
+            <div className="-mt-32 ml-auto mr-auto w-10/12 px-12 md:w-6/12 md:px-4 lg:w-4/12">
               <div className="bg-blueGray-700 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg shadow-lg">
                 <img
                   alt="..."
@@ -184,34 +184,34 @@ export default function Index() {
               <h3 className="mb-2 text-3xl font-semibold leading-normal">
                 CSS Components
               </h3>
-              <p className="text-blueGray-600 mt-4 mb-4 text-lg font-light leading-relaxed">
+              <p className="text-blueGray-600 mb-4 mt-4 text-lg font-light leading-relaxed">
                 Every element that you need in a product comes built in as a
                 component. All components fit perfectly with each other and can
                 have different colours.
               </p>
               <div className="block pb-6">
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Buttons
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Inputs
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Labels
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Menus
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Navbars
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Pagination
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Progressbars
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Typography
                 </span>
               </div>
@@ -225,7 +225,7 @@ export default function Index() {
               </a>
             </div>
 
-            <div className="mr-auto ml-auto mt-32 w-full px-4 md:w-5/12">
+            <div className="ml-auto mr-auto mt-32 w-full px-4 md:w-5/12">
               <div className="relative mb-6 mt-48 flex w-full min-w-0 flex-col md:mt-0">
                 <img
                   alt="..."
@@ -262,7 +262,7 @@ export default function Index() {
           </div>
 
           <div className="flex flex-wrap items-center pt-32">
-            <div className="mr-auto ml-auto mt-32 w-full px-4 md:w-6/12">
+            <div className="ml-auto mr-auto mt-32 w-full px-4 md:w-6/12">
               <div className="relative flex flex-wrap justify-center">
                 <div className="my-4 w-full px-4 lg:w-6/12">
                   <a
@@ -368,38 +368,38 @@ export default function Index() {
               <h3 className="mb-2 text-3xl font-semibold leading-normal">
                 Javascript Components
               </h3>
-              <p className="text-blueGray-600 mt-4 mb-4 text-lg font-light leading-relaxed">
+              <p className="text-blueGray-600 mb-4 mt-4 text-lg font-light leading-relaxed">
                 In order to create a great User Experience some components
                 require JavaScript. In this way you can manipulate the elements
                 on the page and give more options to your users.
               </p>
-              <p className="text-blueGray-600 mt-4 mb-4 text-lg font-light leading-relaxed">
+              <p className="text-blueGray-600 mb-4 mt-4 text-lg font-light leading-relaxed">
                 We created a set of Components that are dynamic and come to help
                 you.
               </p>
               <div className="block pb-6">
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Alerts
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Dropdowns
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Menus
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Modals
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Navbars
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Popovers
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Tabs
                 </span>
-                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white py-1 px-2 text-xs font-semibold uppercase last:mr-0">
+                <span className="text-blueGray-500 mr-2 mt-2 inline-block rounded-full bg-white px-2 py-1 text-xs font-semibold uppercase last:mr-0">
                   Tooltips
                 </span>
               </div>
@@ -435,7 +435,7 @@ export default function Index() {
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-blueGray-500 bg-blueGray-50 mr-3 inline-block rounded-full py-1 px-2 text-xs font-semibold uppercase">
+                        <span className="text-blueGray-500 bg-blueGray-50 mr-3 inline-block rounded-full px-2 py-1 text-xs font-semibold uppercase">
                           <i className="fas fa-fingerprint"></i>
                         </span>
                       </div>
@@ -449,7 +449,7 @@ export default function Index() {
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-blueGray-500 bg-blueGray-50 mr-3 inline-block rounded-full py-1 px-2 text-xs font-semibold uppercase">
+                        <span className="text-blueGray-500 bg-blueGray-50 mr-3 inline-block rounded-full px-2 py-1 text-xs font-semibold uppercase">
                           <i className="fab fa-html5"></i>
                         </span>
                       </div>
@@ -463,7 +463,7 @@ export default function Index() {
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-blueGray-500 bg-blueGray-50 mr-3 inline-block rounded-full py-1 px-2 text-xs font-semibold uppercase">
+                        <span className="text-blueGray-500 bg-blueGray-50 mr-3 inline-block rounded-full px-2 py-1 text-xs font-semibold uppercase">
                           <i className="far fa-paper-plane"></i>
                         </span>
                       </div>
@@ -495,7 +495,7 @@ export default function Index() {
         <div className="mt-24 flex flex-wrap justify-center text-center">
           <div className="w-full px-12 md:w-6/12 md:px-4">
             <h2 className="text-4xl font-semibold">Beautiful Example Pages</h2>
-            <p className="text-blueGray-500 mt-4 mb-4 text-lg leading-relaxed">
+            <p className="text-blueGray-500 mb-4 mt-4 text-lg leading-relaxed">
               Notus NextJS is a completly new product built using our past
               experience in web templates. Take the examples we made for you and
               start playing with them.
@@ -569,7 +569,7 @@ export default function Index() {
               <h3 className="mb-2 text-3xl font-semibold leading-normal text-white">
                 Open Source
               </h3>
-              <p className="text-blueGray-400 mt-4 mb-4 text-lg font-light leading-relaxed">
+              <p className="text-blueGray-400 mb-4 mt-4 text-lg font-light leading-relaxed">
                 Since{" "}
                 <a
                   href="https://tailwindcss.com/?ref=creative"
@@ -582,20 +582,20 @@ export default function Index() {
                 too. You can give this version a try to feel the design and also
                 test the quality of the code!
               </p>
-              <p className="text-blueGray-400 mt-0 mb-4 text-lg font-light leading-relaxed">
+              <p className="text-blueGray-400 mb-4 mt-0 text-lg font-light leading-relaxed">
                 Get it free on Github and please help us spread the news with a
                 Star!
               </p>
               <a
                 href="https://github.com/creativetimofficial/notus-nextjs?ref=nnjs-index"
                 target="_blank"
-                className="github-star bg-blueGray-700 active:bg-blueGray-600 mt-4 mr-1 mb-1 inline-block rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none"
+                className="github-star bg-blueGray-700 active:bg-blueGray-600 mb-1 mr-1 mt-4 inline-block rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none"
               >
                 Github Star
               </a>
             </div>
 
-            <div className="relative mr-auto ml-auto mt-32 w-full px-4 md:w-4/12">
+            <div className="relative ml-auto mr-auto mt-32 w-full px-4 md:w-4/12">
               <i className="fab fa-github text-blueGray-700 text-55 -top-150-px -right-100 absolute left-auto opacity-80"></i>
             </div>
           </div>
@@ -604,7 +604,7 @@ export default function Index() {
 
       <section className="bg-blueGray-200 relative pb-16 pt-32">
         <div
-          className="absolute top-0 bottom-auto left-0 right-0 -mt-20 h-20 w-full"
+          className="absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full"
           style={{ transform: "translateZ(0)" }}
         >
           <svg
@@ -624,7 +624,7 @@ export default function Index() {
         </div>
 
         <div className="container mx-auto">
-          <div className="relative z-10 -mt-64 flex flex-wrap justify-center rounded-lg bg-white py-16 px-12 shadow-xl">
+          <div className="relative z-10 -mt-64 flex flex-wrap justify-center rounded-lg bg-white px-12 py-16 shadow-xl">
             <div className="w-full text-center lg:w-8/12">
               <p className="text-center text-4xl">
                 <span role="img" aria-label="love">
@@ -634,7 +634,7 @@ export default function Index() {
               <h3 className="text-3xl font-semibold">
                 Do you love this Starter Kit?
               </h3>
-              <p className="text-blueGray-500 mt-4 mb-4 text-lg leading-relaxed">
+              <p className="text-blueGray-500 mb-4 mt-4 text-lg leading-relaxed">
                 Cause if you do, it can be yours now. Hit the buttons below to
                 navigate to get the Free version for your next project. Build a
                 new web app or give an old project a new look!
@@ -643,14 +643,14 @@ export default function Index() {
                 <a
                   href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/overview/notus?ref=nnjs-index"
                   target="_blank"
-                  className="get-started bg-blueGray-400 active:bg-blueGray-500 mr-1 mb-2 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+                  className="get-started bg-blueGray-400 active:bg-blueGray-500 mb-2 mr-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
                 >
                   Get started
                 </a>
                 <a
                   href="https://github.com/creativetimofficial/notus-nextjs?ref=nnjs-index"
                   target="_blank"
-                  className="github-star bg-blueGray-700 active:bg-blueGray-600 mr-1 mb-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none sm:ml-1"
+                  className="github-star bg-blueGray-700 active:bg-blueGray-600 mb-1 mr-1 rounded px-6 py-4 text-sm font-bold uppercase text-white shadow outline-none hover:shadow-lg focus:outline-none sm:ml-1"
                 >
                   <i className="fab fa-github mr-1 text-lg"></i>
                   <span>Help With a Star</span>

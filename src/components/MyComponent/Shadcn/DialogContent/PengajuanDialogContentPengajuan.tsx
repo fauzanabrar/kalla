@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Button } from "../../../../../@/components/ui/button";
+import { Button } from "../../../ui/button";
 import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogContent,
-} from "../../../../../@/components/ui/dialog";
-import { Input } from "../../../../../@/components/ui/input";
-import { Label } from "../../../../../@/components/ui/label";
-import { Textarea } from "../../../../../@/components/ui/textarea";
-import { ScrollArea } from "../../../../../@/components/ui/scroll-area";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
   Select,
@@ -21,8 +21,8 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../../../../../@/components/ui/select"
-import { DateTimePicker } from "../../../../../@/components/ui/date-time-picker/date-time-picker";
+} from "@/components/ui/select";
+import { DateTimePicker } from "../../../ui/date-time-picker/date-time-picker";
 
 interface MyDialogContentProps {
   inputFiles: { id: string }[];
@@ -65,13 +65,18 @@ export default function PengajuanDialogContent({
           </div>
           <div className="grid w-full gap-1.5">
             <Label htmlFor="jenis-pengajuan">Jenis Pengajuan</Label>
-            <Select onValueChange={selectOnValueChange} defaultValue={"barang-jasa"}>
+            <Select
+              onValueChange={selectOnValueChange}
+              defaultValue={"barang-jasa"}
+            >
               <SelectTrigger>
-                <SelectValue placeholder="Jenis Pengajuan"/>
+                <SelectValue placeholder="Jenis Pengajuan" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="barang-jasa">Pengadaan Barang dan Jasa</SelectItem>
+                  <SelectItem value="barang-jasa">
+                    Pengadaan Barang dan Jasa
+                  </SelectItem>
                   <SelectItem value="maintenance">Maintenance Asset</SelectItem>
                   <SelectItem value="it-tools">IT Tools</SelectItem>
                 </SelectGroup>
@@ -96,7 +101,7 @@ export default function PengajuanDialogContent({
                     <Button
                       variant="outline"
                       className="rounded-md border-s-2"
-                      onClick={e => handleAddInputFile()}
+                      onClick={(e) => handleAddInputFile()}
                     >
                       +
                     </Button>
@@ -115,20 +120,19 @@ export default function PengajuanDialogContent({
           </div>
         </div>
         <DialogFooter>
-          <div className="flex justify-start w-full">
-            
-        <Button
-          variant={"outline"}
-          className="rounded-md border-s-2"
-          onClick={(e) => {
-            e.preventDefault();
-            setOpen2(false);
-          }}
-        >
-          Kembali
-        </Button>
+          <div className="flex w-full justify-start">
+            <Button
+              variant={"outline"}
+              className="rounded-md border-s-2"
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen2(false);
+              }}
+            >
+              Kembali
+            </Button>
           </div>
-      </DialogFooter>
+        </DialogFooter>
       </ScrollArea>
     </div>
   );

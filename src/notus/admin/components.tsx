@@ -1,10 +1,10 @@
 import React from "react";
-import Alerts from "../../components/Alerts/Alerts";
-import Button from "../../components/Bottons/Button";
-import ExampleDropdown from "../../components/Dropdowns/ExampleDropdown";
-import Modal from "../../components/Modals/Modal";
-import ModalTailwind from "../../components/Modals/ModalTailwind";
-import TabsWithIcon from "../../components/Tabs/TabWithIcon";
+import Alerts from "../../components/Notus/Alerts/Alerts";
+import Button from "../../components/Notus/Buttons/Button";
+import ExampleDropdown from "../../components/Notus/Dropdowns/ExampleDropdown";
+import Modal from "../../components/Notus/Modals/Modal";
+import ModalTailwind from "../../components/Notus/Modals/ModalTailwind";
+import TabsWithIcon from "../../components/Notus/Tabs/TabWithIcon";
 
 // layout for page
 import Admin from "../../layouts/Admin";

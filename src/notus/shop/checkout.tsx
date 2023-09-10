@@ -3,11 +3,11 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../../components/Navbars/IndexNavbar";
-import Footer from "../../components/Footers/Footer";
+import Navbar from "../../components/Notus/Navbars/IndexNavbar";
+import Footer from "../../components/Notus/Footers/Footer";
 import Image from "next/image";
-import CardProductsCheckout from "../../components/Cards/CardProductsCheckout";
-import CardBilling from "../../components/Cards/CardBilling";
+import CardProductsCheckout from "../../components/Notus/Cards/CardProductsCheckout";
+import CardBilling from "../../components/Notus/Cards/CardBilling";
 
 const Checkout = () => {
   const cardproductscheckout = {
@@ -237,7 +237,7 @@ const Checkout = () => {
     <>
       <Navbar />
       <main>
-        <section className="min-h-screen-60 max-h-440-px relative flex items-center pt-32 pb-48">
+        <section className="min-h-screen-60 max-h-440-px relative flex items-center pb-48 pt-32">
           <div className="bg-blueGray-900 z-1 absolute left-0 top-0 block h-full w-full opacity-75"></div>
           <div
             className="bg-blueGray-800 bg-50 absolute z-0 h-full w-full bg-cover"
@@ -266,7 +266,7 @@ const Checkout = () => {
           <div className="container mx-auto -mt-64 px-4">
             <div className="-mx-4 flex flex-wrap">
               <div className="relative w-full px-4 lg:w-4/12">
-                <h3 className="mt-0 mb-2 text-4xl font-normal leading-normal text-white">
+                <h3 className="mb-2 mt-0 text-4xl font-normal leading-normal text-white">
                   Order summary
                 </h3>
                 <CardProductsCheckout {...cardproductscheckout} />

@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-import Navbar from "../components/Navbars/AuthNavbar";
+import Navbar from "../components/Notus/Navbars/AuthNavbar";
 
 interface AuthProps {
   children: JSX.Element | JSX.Element[];

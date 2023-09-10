@@ -3,8 +3,8 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../../components/Navbars/IndexNavbar";
-import Footer from "../../components/Footers/Footer";
+import Navbar from "../../components/Notus/Navbars/IndexNavbar";
+import Footer from "../../components/Notus/Footers/Footer";
 import Image from "next/image";
 
 import AWS from " ../../../public/assets/skills/aws.png";
@@ -27,7 +27,7 @@ const Portfolio = () => {
     <>
       <Navbar />
       <main>
-        <div className="min-h-screen-25 relative flex content-center items-center justify-center pt-16 pb-32">
+        <div className="min-h-screen-25 relative flex content-center items-center justify-center pb-32 pt-16">
           <div
             className="absolute top-0 h-full w-full bg-cover bg-center"
             style={{
@@ -65,7 +65,7 @@ const Portfolio = () => {
             </div>
           </div>
           <div
-            className="pointer-events-none absolute top-auto bottom-0 left-0 right-0 h-16 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto h-16 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -88,7 +88,7 @@ const Portfolio = () => {
         <section className="-mt-24 pb-20">
           <div className="container mx-auto px-4">
             <div className="mt-24 flex flex-wrap items-center">
-              <div className="mr-auto ml-auto w-full px-4 pt-8 md:w-4/12">
+              <div className="ml-auto mr-auto w-full px-4 pt-8 md:w-4/12">
                 <div className="bg-blueGray-700 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg shadow-lg">
                   <img
                     alt="..."
@@ -116,16 +116,16 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <div className="mr-auto ml-auto w-full px-4 md:w-5/12">
+              <div className="ml-auto mr-auto w-full px-4 md:w-5/12">
                 <h3 className="mb-2 text-3xl font-semibold leading-normal">
                   Working with us is a pleasure
                 </h3>
-                <p className="text-blueGray-600 mt-4 mb-4 text-lg font-light leading-relaxed">
+                <p className="text-blueGray-600 mb-4 mt-4 text-lg font-light leading-relaxed">
                   Don&apos;t let your uses guess by attaching tooltips and
                   popoves to any element. Just make sure you enable them first
                   via JavaScript.
                 </p>
-                <p className="text-blueGray-600 mt-0 mb-4 text-lg font-light leading-relaxed">
+                <p className="text-blueGray-600 mb-4 mt-0 text-lg font-light leading-relaxed">
                   The kit comes with three pre-built pages to help you get
                   started faster. You can change the text and images and
                   you&apos;re good to go. Just make sure you enable them first
@@ -141,7 +141,7 @@ const Portfolio = () => {
 
         <section className="bg-blueGray-200 relative py-20">
           <div
-            className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -160,11 +160,11 @@ const Portfolio = () => {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 pt-0 pb-16">
+          <div className="container mx-auto px-4 pb-16 pt-0">
             <div className="flex flex-wrap justify-center text-center">
               <div className="w-full px-4 lg:w-6/12">
                 <h2 className="text-4xl font-semibold">Skills</h2>
-                <p className="text-blueGray-400 mt-4 mb-4 text-lg leading-relaxed">
+                <p className="text-blueGray-400 mb-4 mt-4 text-lg leading-relaxed">
                   Put the potentially record low maximum sea ice extent tihs
                   year down to low ice. According to the National Oceanic and
                   Atmospheric Administration, Ted, Scambos.
@@ -260,7 +260,7 @@ const Portfolio = () => {
 
         <section className="relative py-20">
           <div
-            className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -279,11 +279,11 @@ const Portfolio = () => {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 pt-0 pb-16">
+          <div className="container mx-auto px-4 pb-16 pt-0">
             <div className="flex flex-wrap justify-center text-center">
               <div className="w-full px-4 lg:w-6/12">
                 <h2 className="text-4xl font-semibold">Projects</h2>
-                <p className="text-blueGray-400 mt-4 mb-4 text-lg leading-relaxed">
+                <p className="text-blueGray-400 mb-4 mt-4 text-lg leading-relaxed">
                   Put the potentially record low maximum sea ice extent tihs
                   year down to low ice. According to the National Oceanic and
                   Atmospheric Administration, Ted, Scambos.
@@ -298,7 +298,7 @@ const Portfolio = () => {
                     src={propertyImg}
                     alt="/"
                   />
-                  <div className="absolute top-[50%] left-[50%] hidden translate-x-[-50%] translate-y-[-50%] group-hover:block">
+                  <div className="absolute left-[50%] top-[50%] hidden translate-x-[-50%] translate-y-[-50%] group-hover:block">
                     <h3 className="text-center text-2xl tracking-wider text-white">
                       {"Property Finder"}
                     </h3>
@@ -319,7 +319,7 @@ const Portfolio = () => {
 
         <section className="bg-blueGray-800 relative block pb-20">
           <div
-            className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -338,13 +338,13 @@ const Portfolio = () => {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 lg:pt-24 lg:pb-64">
+          <div className="container mx-auto px-4 lg:pb-64 lg:pt-24">
             <div className="flex flex-wrap justify-center text-center">
               <div className="w-full px-4 lg:w-6/12">
                 <h2 className="text-4xl font-semibold text-white">
                   Build something
                 </h2>
-                <p className="text-blueGray-400 mt-4 mb-4 text-lg leading-relaxed">
+                <p className="text-blueGray-400 mb-4 mt-4 text-lg leading-relaxed">
                   Put the potentially record low maximum sea ice extent tihs
                   year down to low ice. According to the National Oceanic and
                   Atmospheric Administration, Ted, Scambos.
@@ -359,7 +359,7 @@ const Portfolio = () => {
                 <h6 className="mt-5 text-xl font-semibold text-white">
                   Excelent Services
                 </h6>
-                <p className="text-blueGray-400 mt-2 mb-4">
+                <p className="text-blueGray-400 mb-4 mt-2">
                   Some quick example text to build on the card title and make up
                   the bulk of the card&apos;s content.
                 </p>
@@ -371,7 +371,7 @@ const Portfolio = () => {
                 <h5 className="mt-5 text-xl font-semibold text-white">
                   Grow your market
                 </h5>
-                <p className="text-blueGray-400 mt-2 mb-4">
+                <p className="text-blueGray-400 mb-4 mt-2">
                   Some quick example text to build on the card title and make up
                   the bulk of the card&apos;s content.
                 </p>
@@ -383,7 +383,7 @@ const Portfolio = () => {
                 <h5 className="mt-5 text-xl font-semibold text-white">
                   Launch time
                 </h5>
-                <p className="text-blueGray-400 mt-2 mb-4">
+                <p className="text-blueGray-400 mb-4 mt-2">
                   Some quick example text to build on the card title and make up
                   the bulk of the card&apos;s content.
                 </p>
@@ -400,7 +400,7 @@ const Portfolio = () => {
                     <h4 className="text-2xl font-semibold">
                       Want to work with us?
                     </h4>
-                    <p className="text-blueGray-500 mt-1 mb-4 leading-relaxed">
+                    <p className="text-blueGray-500 mb-4 mt-1 leading-relaxed">
                       Complete this form and we will get back to you in 24
                       hours.
                     </p>
@@ -448,7 +448,7 @@ const Portfolio = () => {
                     </div>
                     <div className="mt-6 text-center">
                       <button
-                        className="bg-blueGray-800 active:bg-blueGray-600 mr-1 mb-1 rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+                        className="bg-blueGray-800 active:bg-blueGray-600 mb-1 mr-1 rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
                         type="button"
                       >
                         Send Message

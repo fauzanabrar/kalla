@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import Head from "next/head";
 import Router from "next/router";
 
-import PageChange from "../components/PageChange/PageChange";
+import PageChange from "../components/Notus/PageChange/PageChange";
 
 import type { AppProps } from "next/app";
 
