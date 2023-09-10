@@ -14,16 +14,12 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, ChevronDown } from "lucide-react";
 
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -37,192 +33,11 @@ import {
 import { Button } from "../../../ui/button";
 import { Input } from "@/components/ui/input";
 import { DialogDemo } from "../Dialog/MyDialog";
-import { SelectDemo } from "../Select/Select";
 import { SelectPageSize } from "../Select/SelectPageSize";
-import {Pagination} from "../Pagination/Pagination";
+import { Pagination } from "../Pagination/Pagination";
 import StatusItem from "../../Status/StatusItem";
-
-export type Asset = {
-  id: string;
-  name: string;
-  jenis: string;
-  user: string;
-  sbu: string;
-  status:
-    | "Menunggu RAB"
-    | "Menunggu PR"
-    | "PR diupload"
-    | "Diverifikasi"
-    | "Pengadaan"
-    | "Selesai"
-    | "Ditolak";
-  queue: number;
-};
-
-const assetData: Asset[] = [
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 1,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputerisasi",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 2,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 3,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 1,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputerisasi",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 2,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 3,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 1,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputerisasi",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 2,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 3,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 1,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputerisasi",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 2,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 3,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 1,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputerisasi",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 2,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 3,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 1,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputerisasi",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 2,
-  },
-  {
-    id: "m5gr84i9",
-    name: "Pembelian Komputer",
-    jenis: "Komputer",
-    user: "jflkdasf",
-    sbu: "SBU 1",
-    status: "Menunggu RAB",
-    queue: 3,
-  },
-];
+import useStore from "@/lib/zustand/store";
+import { fakeAssetData } from "@/lib/fake-data";
 
 interface nameType {
   row: {
@@ -233,102 +48,84 @@ interface nameType {
   };
 }
 
-export const columns: ColumnDef<Asset>[] = [
-  {
-    accessorKey: "name",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Name
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }: nameType) => (
-      <div>
-        <div className="whitespace-nowrap capitalize">{row.original.name}</div>
-        <div className="capitalize text-neutral-400">{row.original.jenis}</div>
-      </div>
-    ),
-  },
-  {
-    accessorKey: "user",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          User
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className="capitalize">{row.getValue("user")}</div>,
-  },
-  {
-    accessorKey: "sbu",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          SBU
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className="capitalize">{row.getValue("sbu")}</div>,
-  },
-  {
-    accessorKey: "status",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Status
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <StatusItem status={row.getValue("status")} />,
-  },
-  {
-    accessorKey: "queue",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="w-full"
-        >
-          Queue
-          <ArrowUpDown className="h-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => (
-      <div className="text-center capitalize">{row.getValue("queue")}</div>
-    ),
-  },
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => {
-      return (
-        <div className="flex justify-center">
-          <DialogDemo />
-        </div>
-      );
-    },
-  },
-];
+interface Step {
+  type: string; // This property identifies the type of step
+  rejected: boolean; // Indicates whether the step is rejected
+  
+}
+interface StepInfo {
+  currentStep: "first" | "second" | "third" | "fourth" | "done" | "failed";
+  currentMessage:
+  | "Menunggu RAB"
+  | "Menunggu PR"
+  | "PR diupload"
+  | "Diverifikasi"
+  | "Pengadaan"
+  | "Selesai"
+  | "Ditolak";
+}
+
+
+interface PermohonanStep extends Step {
+  type: "permohonan";
+  name: string;
+  user: string;
+  filePermohonan: File;
+  createdAt: Date;
+  updatedAt: Date;
+  approvedDate: Date;
+}
+
+interface PRStep extends Step {
+  type: "pr";
+  name: string;
+  user: string;
+  filePR: File;
+  createdAt: Date;
+  updatedAt: Date;
+  approvedDate: Date;
+}
+
+interface RABStep extends Step {
+  type: "rab";
+  name: string;
+  user: string;
+  fileRAB: File;
+  createdAt: Date;
+  updatedAt: Date;
+  approvedDate: Date;
+}
+
+interface VerifkasiStep extends Step {
+  type: "verifikasi";
+  name: string;
+  user: string;
+  fileVerifikasi: File[];
+  createdAt: Date;
+  updatedAt: Date;
+  approvedDate: Date;
+}
+
+interface PengadaanStep extends Step {
+  type: "pengadaan";
+  name: string;
+  user: string;
+  filePengadaan: File[];
+  createdAt: Date;
+  updatedAt: Date;
+  approvedDate: Date;
+}
+
+export type Asset = {
+  id: string;
+  name: string;
+  jenis: string;
+  user: string;
+  sbu: string;
+  status: StepInfo;
+  completedSteps: Step[];
+  queue: number;
+};
 
 type PropsType = {
   tableName: string;
@@ -336,6 +133,7 @@ type PropsType = {
 };
 
 export function DataTableAsset({ initialPageSize, tableName }: PropsType) {
+  const {fakeData, setFakeData, add: addFakeData}: any = useStore();
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -348,8 +146,145 @@ export function DataTableAsset({ initialPageSize, tableName }: PropsType) {
     table.setPageSize(pageSize);
   };
 
+  const columns: ColumnDef<Asset>[] = React.useMemo(() => {
+    return [
+      {
+        accessorKey: "name",
+        header: ({ column }) => {
+          return (
+            <Button
+              variant="ghost"
+              onClick={() =>
+                column.toggleSorting(column.getIsSorted() === "asc")
+              }
+            >
+              Name
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          );
+        },
+        cell: ({ row }: nameType) => (
+          <div>
+            <div className="whitespace-nowrap capitalize">
+              {row.original.name}
+            </div>
+            <div className="capitalize text-neutral-400">
+              {row.original.jenis}
+            </div>
+          </div>
+        ),
+      },
+      {
+        accessorKey: "user",
+        header: ({ column }) => {
+          return (
+            <Button
+              variant="ghost"
+              onClick={() =>
+                column.toggleSorting(column.getIsSorted() === "asc")
+              }
+            >
+              User
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          );
+        },
+        cell: ({ row }) => (
+          <div className="capitalize">{row.getValue("user")}</div>
+        ),
+      },
+      {
+        accessorKey: "sbu",
+        header: ({ column }) => {
+          return (
+            <Button
+              variant="ghost"
+              onClick={() =>
+                column.toggleSorting(column.getIsSorted() === "asc")
+              }
+            >
+              SBU
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          );
+        },
+        cell: ({ row }) => (
+          <div className="capitalize">{row.getValue("sbu")}</div>
+        ),
+      },
+      {
+        accessorKey: "status",
+        header: ({ column }) => {
+          return (
+            <Button
+              variant="ghost"
+              onClick={() =>
+                column.toggleSorting(column.getIsSorted() === "asc")
+              }
+            >
+              Status
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          );
+        },
+        cell: ({ row }) => {
+          const original = row.original;
+          return (
+            <StatusItem
+              status={original.status.currentMessage}
+              variant={original.status.currentStep}
+            />
+          );
+        },
+      },
+      {
+        accessorKey: "queue",
+        header: ({ column }) => {
+          return (
+            <Button
+              variant="ghost"
+              onClick={() =>
+                column.toggleSorting(column.getIsSorted() === "asc")
+              }
+              className="w-full"
+            >
+              Queue
+              <ArrowUpDown className="h-4" />
+            </Button>
+          );
+        },
+        cell: ({ row }) => (
+          <div className="text-center capitalize">{row.getValue("queue")}</div>
+        ),
+      },
+      {
+        id: "actions",
+        enableHiding: false,
+        cell: ({ row }) => {
+          return (
+            <div className="flex justify-center">
+              <DialogDemo />
+              <Button
+                onClick={() => {
+                  console.log(row.original);
+                  addFakeData({ ...row.original});
+                }}
+              >
+                Add
+              </Button>
+            </div>
+          );
+        },
+      },
+    ];
+  }, [fakeData]);
+
+  React.useEffect(() => {
+    setFakeData(fakeAssetData);
+  }, []);
+
   const table: TableType<Asset> = useReactTable({
-    data: assetData,
+    data: fakeData,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,

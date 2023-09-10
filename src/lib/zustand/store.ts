@@ -1,15 +1,19 @@
 import { create } from "zustand";
 
+import { Asset } from "@/components";
+
 interface IStore {
-  count: number;
+  fakeData: Asset[];
   inc: () => void;
   dec: () => void;
 }
 
 const useStore = create((set) => ({
-  count: 0,
-  inc: () => set((state: IStore) => ({ count: state.count + 1 })),
-  dec: () => set((state: IStore) => ({ count: state.count - 1 })),
+  fakeData: [],
+  setFakeData: (data: Asset[]) => set({ fakeData: data }),
+  add: (data: Asset) => set((state: IStore) => ({ fakeData: [...state.fakeData, data] })),
+  delete: (id: string) => set((state: IStore) => ({ fakeData: state.fakeData.filter((data) => data.id !== id) })),
+  get: (id: string) => set((state: IStore) => ({ fakeData: state.fakeData.filter((data) => data.id === id) })),
 }));
 
 export default useStore;
