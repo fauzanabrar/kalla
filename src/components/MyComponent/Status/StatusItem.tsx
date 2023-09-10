@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 import React from "react";
-import { cn } from "../../../../@/lib/utils";
+import { cn } from "@/lib/utils";
 
 const statusVariants = cva(
   "rounded-full h-fit w-fit px-3 py-1 flex justify-center whitespace-nowrap",

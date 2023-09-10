@@ -4,8 +4,8 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import NotificationDropdown from "../../Dropdowns/NotificationDropdown";
-import UserDropdown from "../../Dropdowns/UserDropdown";
+import NotificationDropdown from "../../Notus/Dropdowns/NotificationDropdown";
+import UserDropdown from "../../Notus/Dropdowns/UserDropdown";
 import { SidebarContext } from "../../../lib/context/SidebarContext";
 
 interface SidebarProps {
@@ -165,7 +165,7 @@ export default function MySidebar(props: SidebarProps) {
                   </span>
                   <span
                     className={
-                      "text-sm pr-3 " +
+                      "pr-3 text-sm " +
                       (sidebarOpen && activeSubmenuDashboard === "dashboard"
                         ? "rotate-180"
                         : "rotate-0") +
@@ -300,7 +300,7 @@ export default function MySidebar(props: SidebarProps) {
                   </span>
                   <span
                     className={
-                      "text-sm pr-3 " +
+                      "pr-3 text-sm " +
                       (sidebarOpen && activeSubmenuBarangJasa === "barangjasa"
                         ? "rotate-180"
                         : "rotate-0") +

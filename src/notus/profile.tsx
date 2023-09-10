@@ -1,7 +1,7 @@
 import React from "react";
 
-import Navbar from "../components/Navbars/AuthNavbar";
-import Footer from "../components/Footers/Footer";
+import Navbar from "../components/Notus/Navbars/AuthNavbar";
+import Footer from "../components/Notus/Footers/Footer";
 
 export default function Profile() {
   return (
@@ -22,7 +22,7 @@ export default function Profile() {
             ></span>
           </div>
           <div
-            className="pointer-events-none absolute top-auto bottom-0 left-0 right-0 h-16 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto h-16 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -43,7 +43,7 @@ export default function Profile() {
         </section>
         <section className="bg-blueGray-200 relative py-16">
           <div className="container mx-auto px-4">
-            <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-lg bg-white shadow-xl">
+            <div className="relative -mt-64 mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-white shadow-xl">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
                   <div className="flex w-full justify-center px-4 lg:order-2 lg:w-3/12">
@@ -56,7 +56,7 @@ export default function Profile() {
                     </div>
                   </div>
                   <div className="w-full px-4 lg:order-3 lg:w-4/12 lg:self-center lg:text-right">
-                    <div className="mt-32 py-6 px-3 sm:mt-0">
+                    <div className="mt-32 px-3 py-6 sm:mt-0">
                       <button
                         className="bg-blueGray-700 active:bg-blueGray-600 mb-1 rounded px-4 py-2 text-xs font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none sm:mr-2"
                         type="button"
@@ -98,7 +98,7 @@ export default function Profile() {
                   <h3 className="text-blueGray-700 mb-2 text-4xl font-semibold leading-normal">
                     Jenna Stones
                   </h3>
-                  <div className="text-blueGray-400 mt-0 mb-2 text-sm font-bold uppercase leading-normal">
+                  <div className="text-blueGray-400 mb-2 mt-0 text-sm font-bold uppercase leading-normal">
                     <i className="fas fa-map-marker-alt text-blueGray-400 mr-2 text-lg"></i>{" "}
                     Los Angeles, California
                   </div>

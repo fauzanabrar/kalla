@@ -16,7 +16,7 @@ import {
   sendGoogleToken,
   setLogin,
 } from "../../services/auth";
-import { Button } from "../../../@/components/ui/button";
+import { Button } from "../../components/ui/button";
 
 export default function Login() {
   const [focusedEmail, setFocusedEmail] = React.useState(true);
@@ -107,7 +107,7 @@ export default function Login() {
                 </div>
                 <div className="btn-wrapper text-center">
                   <button
-                    className="active:bg-blueGray-50 text-blueGray-700 mr-2 mb-1 inline-flex items-center rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
+                    className="active:bg-blueGray-50 text-blueGray-700 mb-1 mr-2 inline-flex items-center rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
                     type="button"
                   >
                     <Image
@@ -120,7 +120,7 @@ export default function Login() {
                     Github
                   </button>
                   <button
-                    className="active:bg-blueGray-50 text-blueGray-700 mr-1 mb-1 inline-flex items-center rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
+                    className="active:bg-blueGray-50 text-blueGray-700 mb-1 mr-1 inline-flex items-center rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
                     type="button"
                   >
                     <Image
@@ -192,7 +192,7 @@ export default function Login() {
 
                   <div className="mt-6 text-center">
                     <button
-                      className="bg-blueGray-800 active:bg-blueGray-600 mr-1 mb-1 w-full rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+                      className="bg-blueGray-800 active:bg-blueGray-600 mb-1 mr-1 w-full rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
                       type="button"
                       onClick={(e) => {
                         console.log("Sign in lagi ");

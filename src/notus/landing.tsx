@@ -3,8 +3,8 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../components/Navbars/AuthNavbar";
-import Footer from "../components/Footers/Footer";
+import Navbar from "../components/Notus/Navbars/AuthNavbar";
+import Footer from "../components/Notus/Footers/Footer";
 import Image from "next/image";
 
 const Landing = () => {
@@ -12,7 +12,7 @@ const Landing = () => {
     <>
       <Navbar />
       <main>
-        <div className="min-h-screen-75 relative flex content-center items-center justify-center pt-16 pb-32">
+        <div className="min-h-screen-75 relative flex content-center items-center justify-center pb-32 pt-16">
           <div
             className="absolute top-0 h-full w-full bg-cover bg-center"
             style={{
@@ -42,7 +42,7 @@ const Landing = () => {
             </div>
           </div>
           <div
-            className="pointer-events-none absolute top-auto bottom-0 left-0 right-0 h-16 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-0 left-0 right-0 top-auto h-16 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -72,7 +72,7 @@ const Landing = () => {
                       <i className="fas fa-award"></i>
                     </div>
                     <h6 className="text-xl font-semibold">Awarded Agency</h6>
-                    <p className="text-blueGray-500 mt-2 mb-4">
+                    <p className="text-blueGray-500 mb-4 mt-2">
                       Divide details about your product or agency work into
                       parts. A paragraph describing a feature will be enough.
                     </p>
@@ -87,7 +87,7 @@ const Landing = () => {
                       <i className="fas fa-retweet"></i>
                     </div>
                     <h6 className="text-xl font-semibold">Free Revisions</h6>
-                    <p className="text-blueGray-500 mt-2 mb-4">
+                    <p className="text-blueGray-500 mb-4 mt-2">
                       Keep you user engaged by providing meaningful information.
                       Remember that by this time, the user is curious.
                     </p>
@@ -102,7 +102,7 @@ const Landing = () => {
                       <i className="fas fa-fingerprint"></i>
                     </div>
                     <h6 className="text-xl font-semibold">Verified Company</h6>
-                    <p className="text-blueGray-500 mt-2 mb-4">
+                    <p className="text-blueGray-500 mb-4 mt-2">
                       Write a few lines about each one. A paragraph describing a
                       feature will be enough. Keep you user engaged!
                     </p>
@@ -112,19 +112,19 @@ const Landing = () => {
             </div>
 
             <div className="mt-32 flex flex-wrap items-center">
-              <div className="mr-auto ml-auto w-full px-4 md:w-5/12">
+              <div className="ml-auto mr-auto w-full px-4 md:w-5/12">
                 <div className="text-blueGray-500 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
                   <i className="fas fa-user-friends text-xl"></i>
                 </div>
                 <h3 className="mb-2 text-3xl font-semibold leading-normal">
                   Working with us is a pleasure
                 </h3>
-                <p className="text-blueGray-600 mt-4 mb-4 text-lg font-light leading-relaxed">
+                <p className="text-blueGray-600 mb-4 mt-4 text-lg font-light leading-relaxed">
                   Don&apos;t let your uses guess by attaching tooltips and
                   popoves to any element. Just make sure you enable them first
                   via JavaScript.
                 </p>
-                <p className="text-blueGray-600 mt-0 mb-4 text-lg font-light leading-relaxed">
+                <p className="text-blueGray-600 mb-4 mt-0 text-lg font-light leading-relaxed">
                   The kit comes with three pre-built pages to help you get
                   started faster. You can change the text and images and
                   you&apos;re good to go. Just make sure you enable them first
@@ -135,7 +135,7 @@ const Landing = () => {
                 </Link>
               </div>
 
-              <div className="mr-auto ml-auto w-full px-4 md:w-4/12">
+              <div className="ml-auto mr-auto w-full px-4 md:w-4/12">
                 <div className="bg-blueGray-700 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg shadow-lg">
                   <img
                     alt="..."
@@ -173,7 +173,7 @@ const Landing = () => {
 
         <section className="relative py-20">
           <div
-            className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -218,7 +218,7 @@ const Landing = () => {
                     <li className="py-2">
                       <div className="flex items-center">
                         <div>
-                          <span className="text-blueGray-500 bg-blueGray-100 mr-3 inline-block rounded-full py-1 px-2 text-xs font-semibold uppercase">
+                          <span className="text-blueGray-500 bg-blueGray-100 mr-3 inline-block rounded-full px-2 py-1 text-xs font-semibold uppercase">
                             <i className="fas fa-fingerprint"></i>
                           </span>
                         </div>
@@ -232,7 +232,7 @@ const Landing = () => {
                     <li className="py-2">
                       <div className="flex items-center">
                         <div>
-                          <span className="text-blueGray-500 bg-blueGray-100 mr-3 inline-block rounded-full py-1 px-2 text-xs font-semibold uppercase">
+                          <span className="text-blueGray-500 bg-blueGray-100 mr-3 inline-block rounded-full px-2 py-1 text-xs font-semibold uppercase">
                             <i className="fab fa-html5"></i>
                           </span>
                         </div>
@@ -246,7 +246,7 @@ const Landing = () => {
                     <li className="py-2">
                       <div className="flex items-center">
                         <div>
-                          <span className="text-blueGray-500 bg-blueGray-100 mr-3 inline-block rounded-full py-1 px-2 text-xs font-semibold uppercase">
+                          <span className="text-blueGray-500 bg-blueGray-100 mr-3 inline-block rounded-full px-2 py-1 text-xs font-semibold uppercase">
                             <i className="far fa-paper-plane"></i>
                           </span>
                         </div>
@@ -264,7 +264,7 @@ const Landing = () => {
           </div>
         </section>
 
-        <section className="pt-20 pb-48">
+        <section className="pb-48 pt-20">
           <div className="container mx-auto px-4">
             <div className="mb-24 flex flex-wrap justify-center text-center">
               <div className="w-full px-4 lg:w-6/12">
@@ -293,19 +293,19 @@ const Landing = () => {
                     </p>
                     <div className="mt-6">
                       <button
-                        className="bg-lightBlue-400 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-lightBlue-400 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-twitter"></i>
                       </button>
                       <button
-                        className="bg-lightBlue-600 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-lightBlue-600 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-facebook-f"></i>
                       </button>
                       <button
-                        className="mr-1 mb-1 h-8 w-8 rounded-full bg-pink-500 text-white outline-none focus:outline-none"
+                        className="mb-1 mr-1 h-8 w-8 rounded-full bg-pink-500 text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-dribbble"></i>
@@ -330,13 +330,13 @@ const Landing = () => {
                     </p>
                     <div className="mt-6">
                       <button
-                        className="mr-1 mb-1 h-8 w-8 rounded-full bg-red-600 text-white outline-none focus:outline-none"
+                        className="mb-1 mr-1 h-8 w-8 rounded-full bg-red-600 text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-google"></i>
                       </button>
                       <button
-                        className="bg-lightBlue-600 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-lightBlue-600 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-facebook-f"></i>
@@ -361,19 +361,19 @@ const Landing = () => {
                     </p>
                     <div className="mt-6">
                       <button
-                        className="mr-1 mb-1 h-8 w-8 rounded-full bg-red-600 text-white outline-none focus:outline-none"
+                        className="mb-1 mr-1 h-8 w-8 rounded-full bg-red-600 text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-google"></i>
                       </button>
                       <button
-                        className="bg-lightBlue-400 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-lightBlue-400 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-twitter"></i>
                       </button>
                       <button
-                        className="bg-blueGray-700 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-blueGray-700 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-instagram"></i>
@@ -398,25 +398,25 @@ const Landing = () => {
                     </p>
                     <div className="mt-6">
                       <button
-                        className="mr-1 mb-1 h-8 w-8 rounded-full bg-pink-500 text-white outline-none focus:outline-none"
+                        className="mb-1 mr-1 h-8 w-8 rounded-full bg-pink-500 text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-dribbble"></i>
                       </button>
                       <button
-                        className="mr-1 mb-1 h-8 w-8 rounded-full bg-red-600 text-white outline-none focus:outline-none"
+                        className="mb-1 mr-1 h-8 w-8 rounded-full bg-red-600 text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-google"></i>
                       </button>
                       <button
-                        className="bg-lightBlue-400 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-lightBlue-400 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-twitter"></i>
                       </button>
                       <button
-                        className="bg-blueGray-700 mr-1 mb-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
+                        className="bg-blueGray-700 mb-1 mr-1 h-8 w-8 rounded-full text-white outline-none focus:outline-none"
                         type="button"
                       >
                         <i className="fab fa-instagram"></i>
@@ -431,7 +431,7 @@ const Landing = () => {
 
         <section className="bg-blueGray-800 relative block pb-20">
           <div
-            className="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
+            className="pointer-events-none absolute bottom-auto left-0 right-0 top-0 -mt-20 h-20 w-full overflow-hidden"
             style={{ transform: "translateZ(0)" }}
           >
             <svg
@@ -450,13 +450,13 @@ const Landing = () => {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 lg:pt-24 lg:pb-64">
+          <div className="container mx-auto px-4 lg:pb-64 lg:pt-24">
             <div className="flex flex-wrap justify-center text-center">
               <div className="w-full px-4 lg:w-6/12">
                 <h2 className="text-4xl font-semibold text-white">
                   Build something
                 </h2>
-                <p className="text-blueGray-400 mt-4 mb-4 text-lg leading-relaxed">
+                <p className="text-blueGray-400 mb-4 mt-4 text-lg leading-relaxed">
                   Put the potentially record low maximum sea ice extent tihs
                   year down to low ice. According to the National Oceanic and
                   Atmospheric Administration, Ted, Scambos.
@@ -471,7 +471,7 @@ const Landing = () => {
                 <h6 className="mt-5 text-xl font-semibold text-white">
                   Excelent Services
                 </h6>
-                <p className="text-blueGray-400 mt-2 mb-4">
+                <p className="text-blueGray-400 mb-4 mt-2">
                   Some quick example text to build on the card title and make up
                   the bulk of the card&apos;s content.
                 </p>
@@ -483,7 +483,7 @@ const Landing = () => {
                 <h5 className="mt-5 text-xl font-semibold text-white">
                   Grow your market
                 </h5>
-                <p className="text-blueGray-400 mt-2 mb-4">
+                <p className="text-blueGray-400 mb-4 mt-2">
                   Some quick example text to build on the card title and make up
                   the bulk of the card&apos;s content.
                 </p>
@@ -495,7 +495,7 @@ const Landing = () => {
                 <h5 className="mt-5 text-xl font-semibold text-white">
                   Launch time
                 </h5>
-                <p className="text-blueGray-400 mt-2 mb-4">
+                <p className="text-blueGray-400 mb-4 mt-2">
                   Some quick example text to build on the card title and make up
                   the bulk of the card&apos;s content.
                 </p>
@@ -512,7 +512,7 @@ const Landing = () => {
                     <h4 className="text-2xl font-semibold">
                       Want to work with us?
                     </h4>
-                    <p className="text-blueGray-500 mt-1 mb-4 leading-relaxed">
+                    <p className="text-blueGray-500 mb-4 mt-1 leading-relaxed">
                       Complete this form and we will get back to you in 24
                       hours.
                     </p>
@@ -560,7 +560,7 @@ const Landing = () => {
                     </div>
                     <div className="mt-6 text-center">
                       <button
-                        className="bg-blueGray-800 active:bg-blueGray-600 mr-1 mb-1 rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+                        className="bg-blueGray-800 active:bg-blueGray-600 mb-1 mr-1 rounded px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
                         type="button"
                       >
                         Send Message

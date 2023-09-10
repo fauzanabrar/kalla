@@ -3,13 +3,13 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../../../components/Navbars/IndexNavbar";
-import Footer from "../../../components/Footers/Footer";
+import Navbar from "../../../components/Notus/Navbars/IndexNavbar";
+import Footer from "../../../components/Notus/Footers/Footer";
 import Image from "next/image";
 
 import { HiHeart } from "react-icons/hi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import CardInvoice from "../../../components/Cards/CardInvoice";
+import CardInvoice from "../../../components/Notus/Cards/CardInvoice";
 
 const InvoiceList = () => {
   const cardinvoice = {
@@ -57,7 +57,7 @@ const InvoiceList = () => {
     <>
       <Navbar />
       <main>
-        <section className="min-h-screen-60 max-h-440-px relative flex items-center pt-32 pb-48">
+        <section className="min-h-screen-60 max-h-440-px relative flex items-center pb-48 pt-32">
           <div className="bg-blueGray-900 z-1 absolute left-0 top-0 block h-full w-full opacity-75"></div>
           <div
             className="bg-blueGray-800 bg-50 absolute z-0 h-full w-full bg-cover"

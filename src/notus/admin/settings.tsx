@@ -2,8 +2,8 @@ import React from "react";
 
 // components
 
-import CardSettings from "../../components/Cards/CardSettings";
-import CardProfile from "../../components/Cards/CardProfile";
+import CardSettings from "../../components/Notus/Cards/CardSettings";
+import CardProfile from "../../components/Notus/Cards/CardProfile";
 
 // layout for page
 

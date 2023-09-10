@@ -1,22 +1,16 @@
 import React from "react";
-import CardBarChart from "../../components/Cards/CardBarChart";
-import CardLineChart from "../../components/Cards/CardLineChart";
-import CardPageVisits from "../../components/Cards/CardPageVisits";
-import CardSocialTraffic from "../../components/Cards/CardSocialTraffic";
-
-// components
 
 // layout for page
 import AdminWithStats from "../../layouts/MyLayouts/AdminWithStats";
-import { DataTableAsset } from "../../components/MyComponent/Shadcn/Table/TableAsset";
+import { DataTableAsset } from "@/components";
 
-export default function DashboardView() {
+export default function DashboardView(): JSX.Element {
   return (
     <AdminWithStats>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-        <div className="px-4 py-5 flex-auto">
+      <div className="relative mb-8 flex w-full min-w-0 flex-col break-words rounded-lg bg-white shadow-lg">
+        <div className="flex-auto px-4 py-5">
           <DataTableAsset initialPageSize={5} tableName="Barang dan Jasa" />
-          </div>
+        </div>
       </div>
     </AdminWithStats>
   );

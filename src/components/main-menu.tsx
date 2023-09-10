@@ -1,17 +1,17 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import LogoutIcon from "./svgs/logout-icon";
+import LogoutIcon from "./Notus/svgs/logout-icon";
 import MenuItem, { Menu } from "./menu-item";
-import BellMenuIcon from "./svgs/bell-menu-icon";
-import BookingMenuIcon from "./svgs/booking-menu-icon";
-import CarMenuIcon from "./svgs/car-menu-icon";
-import DashboardMenuIcon from "./svgs/dashboard-menu-icon";
-import Hamburger from "./svgs/hamburger";
-import Logo from "./svgs/logo";
-import PaymentMenuIcon from "./svgs/payment-menu-icon";
-import ReportMenuIcon from "./svgs/report-menu-icon";
-import SettingMenuIcon from "./svgs/setting-menu-icon";
-import TransactionMenuIcon from "./svgs/transaction-menu-icon";
+import BellMenuIcon from "./Notus/svgs/bell-menu-icon";
+import BookingMenuIcon from "./Notus/svgs/booking-menu-icon";
+import CarMenuIcon from "./Notus/svgs/car-menu-icon";
+import DashboardMenuIcon from "./Notus/svgs/dashboard-menu-icon";
+import Hamburger from "./Notus/svgs/hamburger";
+import Logo from "./Notus/svgs/logo";
+import PaymentMenuIcon from "./Notus/svgs/payment-menu-icon";
+import ReportMenuIcon from "./Notus/svgs/report-menu-icon";
+import SettingMenuIcon from "./Notus/svgs/setting-menu-icon";
+import TransactionMenuIcon from "./Notus/svgs/transaction-menu-icon";
 
 const menus = [
   { icon: DashboardMenuIcon, title: "Dashboard", href: "/" },
@@ -115,7 +115,7 @@ function MainMenu() {
       </div>
 
       <div>
-        <button className="h3 flex w-full items-center justify-center rounded-lg bg-white/20 py-3 px-4">
+        <button className="h3 flex w-full items-center justify-center rounded-lg bg-white/20 px-4 py-3">
           <LogoutIcon className="mr-3" /> {sidebarOpen ? "Logout" : ""}
         </button>
       </div>

@@ -3,8 +3,8 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../../components/Navbars/IndexNavbar";
-import Footer from "../../components/Footers/Footer";
+import Navbar from "../../components/Notus/Navbars/IndexNavbar";
+import Footer from "../../components/Notus/Footers/Footer";
 import Image from "next/image";
 
 import { HiHeart } from "react-icons/hi";
@@ -15,7 +15,7 @@ const Shop = () => {
     <>
       <Navbar />
       <main>
-        <div className="min-h-screen-25 relative flex content-center items-center justify-center pt-16 pb-8">
+        <div className="min-h-screen-25 relative flex content-center items-center justify-center pb-8 pt-16">
           <div
             className="absolute top-0 h-full w-full bg-cover bg-center"
             style={{
@@ -69,7 +69,7 @@ const Shop = () => {
                             <HiHeart />
                           </div>
                           <div className="text-xs leading-3">Wishlist</div>
-                          <div className="absolute right-0 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-white">
+                          <div className="absolute -top-1 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-white">
                             8
                           </div>
                         </Link>
@@ -256,7 +256,7 @@ const Shop = () => {
               <p className="font-medium text-gray-600">Shop</p>
             </div>
 
-            <div className="container grid grid-cols-4 items-start gap-6 pt-4 pb-16">
+            <div className="container grid grid-cols-4 items-start gap-6 pb-16 pt-4">
               <div className="col-span-1 overflow-hidden rounded bg-white px-4 pb-6 shadow">
                 <div className="space-y-5 divide-y divide-gray-200">
                   <div>
@@ -525,7 +525,7 @@ const Shop = () => {
                   <select
                     name="sort"
                     id="sort"
-                    className="w-44 rounded border-gray-300 py-3 px-4 text-sm text-gray-600 shadow-sm focus:border-primary focus:ring-primary"
+                    className="w-44 rounded border-gray-300 px-4 py-3 text-sm text-gray-600 shadow-sm focus:border-primary focus:ring-primary"
                   >
                     <option value="">Default sorting</option>
                     <option value="price-low-to-high">Price low to high</option>
@@ -573,7 +573,7 @@ const Shop = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="px-4 pt-4 pb-3">
+                    <div className="px-4 pb-3 pt-4">
                       <Link href="#">
                         <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                           Guyer Chair
@@ -645,7 +645,7 @@ const Shop = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="px-4 pt-4 pb-3">
+                    <div className="px-4 pb-3 pt-4">
                       <Link href="#">
                         <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                           Guyer Chair
@@ -717,7 +717,7 @@ const Shop = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="px-4 pt-4 pb-3">
+                    <div className="px-4 pb-3 pt-4">
                       <Link href="#">
                         <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                           Guyer Chair
@@ -789,7 +789,7 @@ const Shop = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="px-4 pt-4 pb-3">
+                    <div className="px-4 pb-3 pt-4">
                       <Link href="#">
                         <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                           Guyer Chair
@@ -861,7 +861,7 @@ const Shop = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="px-4 pt-4 pb-3">
+                    <div className="px-4 pb-3 pt-4">
                       <Link href="#">
                         <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                           Guyer Chair
@@ -933,7 +933,7 @@ const Shop = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="px-4 pt-4 pb-3">
+                    <div className="px-4 pb-3 pt-4">
                       <Link href="#">
                         <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                           Guyer Chair

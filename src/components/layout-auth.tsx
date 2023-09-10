@@ -1,6 +1,6 @@
 import React from "react";
 import Props from "./props";
-import Logo from "./svgs/logo";
+import Logo from "./Notus/svgs/logo";
 
 function LayoutAuth(props: Props) {
   // return <div className="flex h-screen w-screen flex-row bg-white font-inter">{props.children}</div>;

@@ -1,15 +1,13 @@
 import Link from "next/link";
 import React from "react";
-import UserDropdown from "../../Dropdowns/UserDropdown";
-
+import UserDropdown from "../../Notus/Dropdowns/UserDropdown";
 
 export default function NavbarWithoutDasboard() {
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent p-4 md:flex-row md:flex-nowrap md:justify-start">
+      <nav className="absolute left-0 top-0 z-10 flex w-full items-center bg-transparent p-4 md:flex-row md:flex-nowrap md:justify-start">
         <div className="mx-autp flex w-full flex-wrap items-center justify-between px-4 md:flex-nowrap md:px-10">
-          
           {/* Form */}
           <form className="mr-3 hidden flex-row flex-wrap items-center md:flex lg:ml-auto">
             <div className="relative flex w-full flex-wrap items-stretch">

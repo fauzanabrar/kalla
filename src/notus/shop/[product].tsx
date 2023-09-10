@@ -3,8 +3,8 @@ import Link from "next/link";
 
 // components
 
-import Navbar from "../../components/Navbars/IndexNavbar";
-import Footer from "../../components/Footers/Footer";
+import Navbar from "../../components/Notus/Navbars/IndexNavbar";
+import Footer from "../../components/Notus/Footers/Footer";
 import Image from "next/image";
 
 import { HiHeart } from "react-icons/hi";
@@ -15,7 +15,7 @@ const Product = () => {
     <>
       <Navbar />
       <main>
-        <div className="min-h-screen-25 relative flex content-center items-center justify-center pt-16 pb-8">
+        <div className="min-h-screen-25 relative flex content-center items-center justify-center pb-8 pt-16">
           <div
             className="absolute top-0 h-full w-full bg-cover bg-center"
             style={{
@@ -69,7 +69,7 @@ const Product = () => {
                             <HiHeart />
                           </div>
                           <div className="text-xs leading-3">Wishlist</div>
-                          <div className="absolute right-0 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-white">
+                          <div className="absolute -top-1 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-white">
                             8
                           </div>
                         </a>
@@ -540,24 +540,24 @@ const Product = () => {
 
                 <table className="mt-6 w-full table-auto border-collapse text-left text-sm text-gray-600">
                   <tr>
-                    <th className="w-40 border border-gray-300 py-2 px-4 font-medium">
+                    <th className="w-40 border border-gray-300 px-4 py-2 font-medium">
                       Color
                     </th>
-                    <th className="border border-gray-300 py-2 px-4 ">
+                    <th className="border border-gray-300 px-4 py-2 ">
                       Blank, Brown, Red
                     </th>
                   </tr>
                   <tr>
-                    <th className="w-40 border border-gray-300 py-2 px-4 font-medium">
+                    <th className="w-40 border border-gray-300 px-4 py-2 font-medium">
                       Material
                     </th>
-                    <th className="border border-gray-300 py-2 px-4 ">Latex</th>
+                    <th className="border border-gray-300 px-4 py-2 ">Latex</th>
                   </tr>
                   <tr>
-                    <th className="w-40 border border-gray-300 py-2 px-4 font-medium">
+                    <th className="w-40 border border-gray-300 px-4 py-2 font-medium">
                       Weight
                     </th>
-                    <th className="border border-gray-300 py-2 px-4 ">55kg</th>
+                    <th className="border border-gray-300 px-4 py-2 ">55kg</th>
                   </tr>
                 </table>
               </div>
@@ -597,7 +597,7 @@ const Product = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="px-4 pt-4 pb-3">
+                  <div className="px-4 pb-3 pt-4">
                     <a href="#">
                       <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                         Guyer Chair
@@ -668,7 +668,7 @@ const Product = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="px-4 pt-4 pb-3">
+                  <div className="px-4 pb-3 pt-4">
                     <a href="#">
                       <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                         Bed King Size
@@ -739,7 +739,7 @@ const Product = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="px-4 pt-4 pb-3">
+                  <div className="px-4 pb-3 pt-4">
                     <a href="#">
                       <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                         Couple Sofa
@@ -810,7 +810,7 @@ const Product = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="px-4 pt-4 pb-3">
+                  <div className="px-4 pb-3 pt-4">
                     <a href="#">
                       <h4 className="mb-2 text-xl font-medium uppercase text-gray-800 transition hover:text-primary">
                         Mattrass X

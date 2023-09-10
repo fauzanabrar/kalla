@@ -1,9 +1,8 @@
-
 // components
 
 import React from "react";
 import MySidebar from "../../components/MyComponent/Sidebar/MySidebar";
-import FooterAdmin from "../../components/Footers/FooterAdmin";
+import FooterAdmin from "../../components/Notus/Footers/FooterAdmin";
 import NavbarWithoutDasboard from "../../components/MyComponent/Navbar/AdminNavbarWithoutDashboard";
 
 interface AdminProps {
@@ -16,10 +15,7 @@ export default function Admin(props: AdminProps) {
 
   return (
     <>
-        <MySidebar
-          sidebarOpen={sidebarOpen}
-          setSidebarOpen={setSidebarOpen}
-          />
+      <MySidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div
         className={
           "bg-blueGray-100 relative z-0" +

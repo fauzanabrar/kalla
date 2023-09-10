@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-import CardTable from "../../components/Cards/CardTable";
+import CardTable from "../../components/Notus/Cards/CardTable";
 import Layout from "../../components/layout";
 
 // layout for page

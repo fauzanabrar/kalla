@@ -3,12 +3,12 @@ import Layout from "../components/layout";
 import StatisticCard from "../components/statistic-card";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import NotificationIcon from "../components/svgs/notification-icon";
-import SearchIcon from "../components/svgs/search-icon";
+import NotificationIcon from "../components/Notus/svgs/notification-icon";
+import SearchIcon from "../components/Notus/svgs/search-icon";
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
-import CarIcon from "../components/svgs/car-icon";
-import ChevronDownIcon from "../components/svgs/chevron-down-icon";
+import CarIcon from "../components/Notus/svgs/car-icon";
+import ChevronDownIcon from "../components/Notus/svgs/chevron-down-icon";
 
 ChartJS.register(ArcElement, Tooltip);
 
@@ -23,7 +23,12 @@ const data = {
   ],
 };
 
-const carNumbers = ["BK 123123 AB", "BK 234324 AB", "BK 162565 AB", "BK 653576 AB"];
+const carNumbers = [
+  "BK 123123 AB",
+  "BK 234324 AB",
+  "BK 162565 AB",
+  "BK 653576 AB",
+];
 
 export default function Home() {
   const [carNumber, setCarNumber] = useState("");
@@ -40,7 +45,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Todays Statistic */}
-      <div className="flex w-80 flex-col space-y-4 overflow-y-auto bg-gray-04 px-7 py-8">
+      <div className="bg-gray-04 flex w-80 flex-col space-y-4 overflow-y-auto px-7 py-8">
         {/* Headline */}
         <div>
           <h2 className="text-gray-01">Todays Statistics</h2>
@@ -82,11 +87,17 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-row items-center justify-between">
               <h3 className="text-gray-02">Hire vs Cancel</h3>
-              <span className="p5 rounded-sm bg-[#F4F5F7] px-2 py-1 text-gray-02">Today</span>
+              <span className="p5 text-gray-02 rounded-sm bg-[#F4F5F7] px-2 py-1">
+                Today
+              </span>
             </div>
 
             <div>
-              <Doughnut data={data} options={{ cutout: "80%" }} className="mb-6" />
+              <Doughnut
+                data={data}
+                options={{ cutout: "80%" }}
+                className="mb-6"
+              />
               <div className="flex flex-col space-y-2">
                 <div className="flex flex-row items-center">
                   <span className="h-4 w-4 flex-none rounded-full bg-primary"></span>
@@ -121,9 +132,12 @@ export default function Home() {
           <button>
             <NotificationIcon />
           </button>
-          <form className="drop-shadow-card flex flex-row items-center rounded-xl bg-white py-3 pr-6 pl-8">
+          <form className="drop-shadow-card flex flex-row items-center rounded-xl bg-white py-3 pl-8 pr-6">
             <label htmlFor="search" className="w-full max-w-xs ">
-              <input placeholder="Search" className="focus-visible:outline-none" />
+              <input
+                placeholder="Search"
+                className="focus-visible:outline-none"
+              />
             </label>
             <button type="submit">
               <SearchIcon />
@@ -132,7 +146,7 @@ export default function Home() {
         </div>
 
         {/* Car Availablity */}
-        <Card className="px-6 pt-8 pb-10">
+        <Card className="px-6 pb-10 pt-8">
           <h4 className="text-black">Car Availablity</h4>
 
           <div className="mt-4 flex  flex-row items-center space-x-6">
@@ -141,7 +155,7 @@ export default function Home() {
               {({ open }) => (
                 <div className="relative">
                   {/* Input */}
-                  <div className="border-gray-05 flex flex-row space-x-3 rounded border py-3 px-4">
+                  <div className="border-gray-05 flex flex-row space-x-3 rounded border px-4 py-3">
                     <CarIcon />
                     <Combobox.Input
                       onChange={(event) => setQuery(event.target.value)}
@@ -149,7 +163,11 @@ export default function Home() {
                       className="focus-visible:outline-none"
                     />
                     <Combobox.Button>
-                      <ChevronDownIcon className={`transition-transform ${open ? "rotate-180" : "rotate-0"}`} />
+                      <ChevronDownIcon
+                        className={`transition-transform ${
+                          open ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
                     </Combobox.Button>
                   </div>
 
@@ -173,7 +191,9 @@ export default function Home() {
             <div className="flex-1">date</div>
 
             {/* Button check */}
-            <button className="rounded bg-primary py-3 px-9 text-white">Check</button>
+            <button className="rounded bg-primary px-9 py-3 text-white">
+              Check
+            </button>
           </div>
         </Card>
       </div>

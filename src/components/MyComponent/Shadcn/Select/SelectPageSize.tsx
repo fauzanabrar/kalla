@@ -8,7 +8,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../../../../../@/components/ui/select";
+} from "@/components/ui/select";
 
 type PropsType = {
   onValueChange: (value: string) => void;
